@@ -1,0 +1,264 @@
+{
+    "topics": [
+      {
+        "name": "Mole Concept",
+        "subtopics": [
+          "mole",
+          "avogadro",
+          "relative atomic mass",
+          "relative molecular mass",
+          "molar mass",
+          "empirical formula",
+          "molecular formula",
+          "gas laws",
+          "ideal gas equation",
+          "molar volume",
+          "concentration",
+          "molarity",
+          "chemical equations",
+          "limiting reagent",
+          "percentage yield",
+          "redox",
+          "oxidation number",
+          "titration",
+          "acid-base titration",
+          "redox titration",
+          "precipitation titration",
+          "complexometric titration",
+          "back titration"
+        ]
+      },
+      {
+        "name": "Atomic Structure and Periodic Table",
+        "subtopics": [
+          "atom",
+          "electron",
+          "proton",
+          "neutron",
+          "subatomic particle",
+          "mass spectrometer",
+          "isotope",
+          "radioactivity",
+          "alpha decay",
+          "beta decay",
+          "gamma decay",
+          "nuclear equation",
+          "emission spectrum",
+          "absorption spectrum",
+          "ionization energy",
+          "electron affinity",
+          "electronic configuration",
+          "aufbau principle",
+          "periodic trends",
+          "s-orbital",
+          "wave-particle duality",
+          "uncertainty principle"
+        ]
+      },
+      {
+        "name": "Bonding, Structure and Intermolecular Forces",
+        "subtopics": [
+          "ionic bond",
+          "covalent bond",
+          "metallic bond",
+          "intermediate bond",
+          "intermolecular force",
+          "van der waals",
+          "dipole-dipole",
+          "hydrogen bond",
+          "molecular shape",
+          "VSEPR",
+          "bond angle",
+          "bond length",
+          "bond energy",
+          "crystal structure",
+          "ionic solid",
+          "covalent solid",
+          "molecular crystal",
+          "x-ray diffraction",
+          "physical properties"
+        ]
+      },
+      {
+        "name": "Organic Chemistry I: Fundamentals",
+        "subtopics": [
+          "carbon",
+          "hybridization",
+          "functional group",
+          "homologous series",
+          "isomer",
+          "structural isomer",
+          "geometrical isomer",
+          "optical isomer",
+          "nomenclature",
+          "purification",
+          "extraction",
+          "synthesis",
+          "qualitative analysis",
+          "quantitative analysis",
+          "spectroscopy",
+          "UV",
+          "IR",
+          "NMR",
+          "mass spectrometry",
+          "x-ray crystallography",
+          "hydrocarbon",
+          "alkane",
+          "alkene",
+          "alkyne",
+          "aromatic",
+          "petroleum",
+          "organic reaction",
+          "pollution"
+        ]
+      },
+      {
+        "name": "Thermochemistry / Energetics",
+        "subtopics": [
+          "enthalpy",
+          "enthalpy change",
+          "hess's law",
+          "lattice energy",
+          "bond enthalpy",
+          "formation enthalpy",
+          "solvation",
+          "energy source",
+          "covalent molecule energetics",
+          "ionic compound energetics"
+        ]
+      },
+      {
+        "name": "Descriptive Inorganic Chemistry: S-block Elements",
+        "subtopics": [
+          "periodic table",
+          "periodicity",
+          "lithium",
+          "beryllium",
+          "sodium",
+          "magnesium",
+          "chlorine",
+          "oxides",
+          "hydrides",
+          "chlorides",
+          "s-block",
+          "reactivity trends",
+          "comparative study"
+        ]
+      },
+      {
+        "name": "Phase Equilibria and Raoult's Law",
+        "subtopics": [
+          "equilibrium",
+          "one-component system",
+          "two-component system",
+          "solution",
+          "ideal solution",
+          "non-ideal solution",
+          "Raoult's law",
+          "vapor pressure",
+          "non-miscible liquid"
+        ]
+      },
+      {
+        "name": "Equilibria",
+        "subtopics": [
+          "chemical equilibrium",
+          "dynamic equilibrium",
+          "Le Chatelier",
+          "redox equilibrium",
+          "acid-base equilibrium",
+          "equilibrium constant",
+          "Kc",
+          "Ka",
+          "Kb",
+          "pH",
+          "buffer"
+        ]
+      },
+      {
+        "name": "Organic Chemistry II: Functional Groups",
+        "subtopics": [
+          "halogenoalkane",
+          "aromatic halogen",
+          "alcohol",
+          "ether",
+          "phenol",
+          "aldehyde",
+          "ketone",
+          "carboxylic acid",
+          "ester",
+          "amide",
+          "amino",
+          "organic nitrogen compound",
+          "functional group chemistry"
+        ]
+      },
+      {
+        "name": "Organic Chemistry III: Reaction Mechanism and Synthetic Route",
+        "subtopics": [
+          "reaction mechanism",
+          "nucleophilic substitution",
+          "electrophilic substitution",
+          "elimination reaction",
+          "addition reaction",
+          "oxidation",
+          "reduction",
+          "rearrangement",
+          "synthetic route",
+          "retrosynthesis",
+          "organic synthesis"
+        ]
+      },
+      {
+        "name": "Descriptive Inorganic Chemistry",
+        "subtopics": [
+          "halogen",
+          "group IV",
+          "carbon compounds",
+          "silicon compounds",
+          "variable oxidation state",
+          "transition metal",
+          "d-block",
+          "complex ion",
+          "ligand",
+          "coordination compound",
+          "stereochemistry",
+          "magnetic property",
+          "catalytic property",
+          "metal complex"
+        ]
+      },
+      {
+        "name": "Reaction Kinetics",
+        "subtopics": [
+          "reaction rate",
+          "rate determination",
+          "rate measurement",
+          "order of reaction",
+          "rate constant",
+          "activation energy",
+          "collision theory",
+          "energy factor",
+          "catalysis",
+          "rate equation"
+        ]
+      },
+      {
+        "name": "Chemistry and Society (Environmental Education)",
+        "subtopics": [
+          "sulfur",
+          "nitrogen",
+          "pollution",
+          "acid rain",
+          "greenhouse gas",
+          "organic pollutant",
+          "heavy metal",
+          "environmental impact",
+          "industrial chemistry",
+          "chemical waste",
+          "sustainability"
+        ]
+      }
+    ]
+  }
+  

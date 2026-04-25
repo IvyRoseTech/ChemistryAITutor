@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+torch
+transformers
+# vllm  <-- Note: vLLM is Linux-only. Uncomment for production/Linux.
+pydantic
+pydantic
+python-docx
+sentence-transformers
+faiss-cpu
+ollama
+llama-cpp-python

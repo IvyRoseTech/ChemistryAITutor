@@ -1,0 +1,31 @@
+# ─── Environment Variables (NEVER commit these) ───
+.env
+.env.local
+.env.production
+
+# ─── Python Cache ───
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ─── Virtual Environment ───
+venv/
+env/
+.venv/
+
+# ─── FAISS Index (large files) ───
+data/index/
+*.faiss
+*.pkl
+
+# ─── Logs ───
+*.log
+logs/
+
+# ─── VS Code ───
+.vscode/
+
+# ─── OS Files ───
+.DS_Store
+Thumbs.db
