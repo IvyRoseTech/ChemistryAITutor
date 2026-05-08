@@ -14,6 +14,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.rag import router as rag_router
+from api.quiz import router as quiz_router
 from retrieval.faiss_index import load_index, index_exists
 from retrieval.faiss_search import initialize_search, get_index_stats, search
 from retrieval.embeddings import load_embedding_model
@@ -25,7 +26,7 @@ from schemas import RAGQueryRequest, RAGQueryResponse, HealthResponse
 app = FastAPI(
     title="GCE AI Tutor Inference Service",
     description="RAG-based inference service for GCE Chemistry tutoring",
-    version="1.0.0"
+    version="2.0.0"
 )
 
 # ─────────────────────────────────────────
@@ -45,7 +46,8 @@ app.add_middleware(
 # ─────────────────────────────────────────
 # MOUNT ROUTERS
 # ─────────────────────────────────────────
-app.include_router(rag_router)   # handles /rag/* routes from api/rag.py
+app.include_router(rag_router)    # handles /rag/* routes
+app.include_router(quiz_router)   # handles /quiz/* routes
 
 # ─────────────────────────────────────────
 # STARTUP — Load FAISS index
@@ -77,11 +79,19 @@ async def startup_event():
     except Exception as e:
         print(f"❌ Failed to load embedding model: {e}")
 
+    # ✅ Verify Groq API key is present on startup
+    groq_key = os.getenv("GROQ_API_KEY", "")
+    if not groq_key or len(groq_key) < 20:
+        print("⚠️  WARNING: GROQ_API_KEY missing or invalid in .env")
+    else:
+        print("✅ Groq API key detected")
+
     print("─" * 50)
     print("🧪 GCE Chemistry AI Tutor is ready!\n")
 
+
 # ─────────────────────────────────────────
-# ROOT — Health check
+# ROOT — Basic health check
 # ─────────────────────────────────────────
 @app.get("/")
 async def root():
@@ -89,59 +99,54 @@ async def root():
     return {
         "service": "GCE AI Tutor Inference Service",
         "status": "running",
-        "version": "1.0.0",
-        "model": "llama3.2:3b",
+        "version": "2.0.0",
+        "llm_provider": "groq",                     # ✅ updated from ollama
+        "model": "llama-3.1-8b-instant",            # ✅ updated from llama3.2:3b
         "subject": "GCE Chemistry"
     }
+
 
 # ─────────────────────────────────────────
 # HEALTH — Detailed system status
 # ─────────────────────────────────────────
 @app.get("/health")
 async def health_check():
-    """Detailed health check including RAG and LLM status."""
+    """Detailed health check including RAG and Groq LLM status."""
     stats = get_index_stats()
 
-    # Check if Ollama/Llama is running
-    llm_status = "unknown"
-    try:
-        import httpx
-        response = httpx.get("http://localhost:11434/api/tags", timeout=3)
-        if response.status_code == 200:
-            models = response.json().get("models", [])
-            model_names = [m.get("name", "") for m in models]
-            llm_status = "running" if any(
-                "llama3.2" in name for name in model_names
-            ) else "model_not_found"
-        else:
-            llm_status = "ollama_error"
-    except Exception:
-        llm_status = "ollama_not_running"
+    # ✅ Check Groq API key instead of pinging Ollama on localhost
+    groq_key = os.getenv("GROQ_API_KEY", "")
+    if not groq_key:
+        llm_status = "missing_api_key"
+    elif len(groq_key) < 20:
+        llm_status = "invalid_api_key"
+    else:
+        llm_status = "ready"
 
     return {
         "status": "healthy" if stats.get("status") == "initialized" else "degraded",
         "rag_index": stats,
         "llm": {
-            "model": "llama3.2:3b",
-            "status": llm_status,
-            "endpoint": "http://localhost:11434"
+            "provider": "groq",                     # ✅ updated from ollama
+            "model": "llama-3.1-8b-instant",        # ✅ updated from llama3.2:3b
+            "status": llm_status,                   # ✅ checks GROQ_API_KEY not localhost
         },
         "service": "GCE Chemistry AI Tutor"
     }
 
+
 # ─────────────────────────────────────────
-# RAG QUERY — Search + Generate Answer
+# RAG QUERY — Lightweight fallback endpoint
 # NOTE: Full implementation is in api/rag.py
-# This is a lightweight fallback endpoint
 # ─────────────────────────────────────────
 @app.post("/query")
 def quick_query(request: RAGQueryRequest):
     """
-    Quick query endpoint - searches FAISS and generates answer.
-    Full RAG endpoint with more options available at /rag/query
+    Quick query endpoint — searches FAISS only.
+    Full Socratic RAG endpoint available at /rag/generate
     """
     try:
-        # Step 1 - Search FAISS
+        # Search FAISS
         results = search(
             query=request.query,
             top_k=request.top_k,
@@ -157,19 +162,8 @@ def quick_query(request: RAGQueryRequest):
                 "status": "no_results"
             }
 
-        # Step 2 - Generate answer with Llama if requested
-        if getattr(request, 'generate_answer', True):
-            from services.llm_service import generate_answer
-            llm_result = generate_answer(request.query, results)
-            return {
-                "query": request.query,
-                "answer": llm_result["answer"],
-                "chunks": results,
-                "count": len(results),
-                "model": "llama3.2:3b",
-                "status": llm_result["status"]
-            }
-
+        # ✅ Removed: Llama/Ollama generation block from here
+        # All AI generation now goes through /rag/generate via generation.py + Groq
         return {
             "query": request.query,
             "answer": None,
@@ -182,5 +176,3 @@ def quick_query(request: RAGQueryRequest):
         print("ERROR IN /query:")
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
-
-
