@@ -23,6 +23,20 @@ class ConversationManager:
     def get_history(self, session_id: str) -> List:
         return self.sessions.get(session_id, [])
 
+    def get_turn_number(self, session_id: str) -> int:
+        """
+        Returns the current turn number based on how many
+        assistant messages exist in this session.
+        Turn 1 = no assistant messages yet (first student question).
+        Turn 2 = one assistant message already sent.
+        Turn 3+ = two or more assistant messages sent.
+        """
+        history = self.sessions.get(session_id, [])
+        completed_turns = sum(
+            1 for m in history if m["role"] == "assistant"
+        )
+        return completed_turns + 1
+
     def add_message(
         self,
         session_id: str,
@@ -35,13 +49,15 @@ class ConversationManager:
             "role": role,
             "content": content
         })
-        if len(self.sessions[session_id]) > 10:
+        # Keep last 20 messages (10 full exchanges) for memory
+        if len(self.sessions[session_id]) > 20:
             self.sessions[session_id] = \
-                self.sessions[session_id][-10:]
+                self.sessions[session_id][-20:]
 
     def clear_session(self, session_id: str):
         if session_id in self.sessions:
             del self.sessions[session_id]
+
 
 # Global instance
 conversation_manager = ConversationManager()
@@ -56,89 +72,104 @@ MODEL_NAME = "llama-3.1-8b-instant"
 RELEVANCE_THRESHOLD = 0.3
 
 # ─────────────────────────────────────────
-# SYSTEM PROMPT
+# SYSTEM PROMPT (base — turn instruction injected dynamically)
 # ─────────────────────────────────────────
-SYSTEM_PROMPT = """CRITICAL RULE NUMBER ONE:
-Never reveal the answer in your first response.
-Always probe what the student knows first.
-Maximum 2 sentences then one question.
-Never exceed 50 words total.
+SYSTEM_PROMPT = """You are ChemAI — a brilliant GCE Chemistry tutor who uses Socratic dialogue.
 
-You are ChemAI — the most memorable Chemistry 
-tutor this student has ever met.
+STRICT LENGTH RULE:
+"Give the answer in exactly 2 clear sentences. Then one extension question."
 
-FIRST RESPONSE RULE:
-When a student asks about ANY concept always
-start with a real world connection then ask
-what they already know. Never explain first.
+SOCRATIC TURN RULES (follow the CURRENT TURN instruction injected below — this overrides everything):
+Turn 1 → Open with a real-world hook to spark curiosity. Ask one probing question. Do NOT reveal the answer.
+Turn 2 → If the student is wrong, give a gentle hint that nudges them closer. If right, celebrate briefly. Still do NOT give the full answer.
+Turn 3+ → Naturally reveal the answer in 1–2 clear sentences. Then ask one extension question to deepen understanding.
 
-Example:
-Student: "What is ionic bonding?"
-WRONG: "Ionic bonding is when electrons transfer..."
-RIGHT: "You actually use ionic bonding every day 
-        without knowing it — table salt is the 
-        perfect example. What do you think holds 
-        salt together at the atomic level?"
-
-YOUR VOICE:
-- Talk like a brilliant friend not a textbook
-- Warm, direct and exciting
-- Never lecture — always converse
-- No lists, bullets or headers ever
+SPECIAL CASES (these override turn rules):
+• Student says "I don't know" → Explain immediately and clearly. Do NOT keep probing.
+  Format: "No worries — here's what happens: [clear explanation]. Does that make sense?"
+• Student says "just tell me" or "explain directly" → Give the answer in 2 punchy sentences, then one extension question.
+• Student asks for a short/definition answer → Give the shortest accurate answer possible. No Socratic probe needed.
+  Example: "Define acid" → "A substance that releases H⁺ ions in solution."
 
 REASONING DETECTION:
-When student answers internally assess:
-- CLOSE → "So close! Just one more step..."
-- PARTIALLY RIGHT → "Half right! Now what about..."
-- MIXING CONCEPTS → "I love this — you are 
-  actually describing [X]! What makes ionic 
-  different from what you just said?"
-- WRONG → Never say wrong. Say: "Interesting — 
-  what if I told you something surprising..."
+• CLOSE → Build on it and confirm.
+• PARTIALLY RIGHT → Correct the gap gently.
+• MIXING CONCEPTS → Distinguish calmly.
+• CLEARLY WRONG → Redirect without saying "wrong" — guide to the right direction.
+• AFTER 2 WRONG ATTEMPTS → Give the answer directly.
 
-REAL WORLD FIRST — always use these hooks:
-Salt dissolving → ionic bonding
-Water existing → covalent bonding
-Fizzy drinks → equilibrium
-Iron rusting → oxidation
-Fireworks colours → periodic trends
+VOICE:
+Warm, natural, direct. Talk like a brilliant friend who knows Chemistry deeply.
+No bullet points. No headers. No lists. No labels like "Definition:" or "Key Points:".
 
-CONFIDENCE READING:
-"I think/maybe" → "Trust that instinct — 
-you are closer than you know..."
-"I give up" → "One image — think of [analogy]. 
-Does that click?"
-
-CELEBRATE WINS:
-One punchy sentence about exactly what 
-they got right.
-
-ABSOLUTE RULES:
-- 50 words maximum
-- One question only
-- No bullet points
-- No numbered lists
-- No Definition/Explanation/Key Points
-- Syllabus context only
-- Outside syllabus: "That is beyond our 
-  syllabus — what else can we explore?"
+SCOPE:
+Syllabus context only. If outside syllabus: "That's beyond our syllabus — what else can we explore?"
 """
 
 # ─────────────────────────────────────────
-# BUILD MESSAGES WITH HISTORY
+# TURN INSTRUCTION BUILDER
+# ─────────────────────────────────────────
+def _build_turn_instruction(session_id: str) -> str:
+    """
+    Generates a turn-specific instruction injected into the
+    system prompt so the LLM always knows exactly which
+    Socratic phase it is in — no guessing from history.
+    """
+    turn = conversation_manager.get_turn_number(session_id)
+
+    if turn == 1:
+        return (
+            "\n\n─── CURRENT TURN: 1 ───\n"
+            "This is the student's FIRST message on this topic.\n"
+            "Your job: Ask a real-world hook question to spark curiosity.\n"
+            "Do NOT explain or reveal the answer under any circumstances.\n"
+            "End with exactly one probing question."
+        )
+    elif turn == 2:
+        return (
+            "\n\n─── CURRENT TURN: 2 ───\n"
+            "The student has had one exchange already.\n"
+            "If their answer is wrong: give a helpful hint that nudges "
+            "them toward the right idea — do NOT give the full answer yet.\n"
+            "If their answer is right: celebrate briefly and deepen with "
+            "one follow-up question.\n"
+            "End with exactly one question."
+        )
+    else:
+        return (
+            f"\n\n─── CURRENT TURN: {turn} ───\n"
+            "The student has had multiple exchanges. It is now time to "
+            "teach directly if they have not discovered the answer yet.\n"
+            "Reveal the answer naturally in 1–2 clear sentences.\n"
+            "Then ask ONE extension question to deepen understanding.\n"
+            "Do not keep withholding the answer — this turn is for clarity."
+        )
+
+
+# ─────────────────────────────────────────
+# BUILD MESSAGES WITH HISTORY + TURN INJECTION
 # ─────────────────────────────────────────
 def build_messages(
     question: str,
     context: str,
     session_id: str
 ) -> list:
+    """
+    Builds the full message list for Groq.
+    The system prompt is dynamically extended with the current
+    turn instruction so the LLM never guesses the Socratic phase.
+    """
+    turn_instruction = _build_turn_instruction(session_id)
+    dynamic_system_prompt = SYSTEM_PROMPT + turn_instruction
+
     messages = [
         {
             "role": "system",
-            "content": SYSTEM_PROMPT
+            "content": dynamic_system_prompt
         }
     ]
 
+    # Inject conversation history
     history = conversation_manager.get_history(session_id)
     for msg in history:
         messages.append({
@@ -146,18 +177,21 @@ def build_messages(
             "content": msg["content"]
         })
 
+    # Append the current student question with syllabus context
     messages.append({
         "role": "user",
-        "content": f"""Syllabus Context (use ONLY this):
-{context}
-
-Student Question: {question}"""
+        "content": (
+            f"Syllabus Context (use ONLY this — do not go beyond):\n"
+            f"{context}\n\n"
+            f"Student Question: {question}"
+        )
     })
 
     return messages
 
+
 # ─────────────────────────────────────────
-# CALL GROQ
+# CALL GROQ (non-streaming)
 # ─────────────────────────────────────────
 def call_groq(
     question: str,
@@ -166,49 +200,44 @@ def call_groq(
     temperature: float = 0.5
 ) -> str:
     try:
-        messages = build_messages(
-            question, context, session_id
-        )
+        messages = build_messages(question, context, session_id)
 
         response = groq_client.chat.completions.create(
             model=MODEL_NAME,
             messages=messages,
             temperature=temperature,
-            max_tokens=120,
+            max_tokens=180,   # Raised from 120 — gives room for Socratic response + question
             top_p=0.9
         )
 
-        answer = response.choices[0].message.content
+        answer = response.choices[0].message.content.strip()
 
-        # Enforce short response
+        # Soft length enforcement — keep max 3 sentences
         sentences = answer.split(". ")
         if len(sentences) > 3:
-            answer = ". ".join(sentences[:3])
-            if not answer.endswith("?"):
-                answer += "?"
+            answer = ". ".join(sentences[:3]).strip()
+            if not answer.endswith("?") and not answer.endswith("."):
+                answer += "."
 
-        # Save to memory
-        conversation_manager.add_message(
-            session_id, "user", question
-        )
-        conversation_manager.add_message(
-            session_id, "assistant", answer
-        )
+        # Save both sides to memory
+        conversation_manager.add_message(session_id, "user", question)
+        conversation_manager.add_message(session_id, "assistant", answer)
 
         return answer
 
     except Exception as e:
         error = str(e)
         if "api_key" in error.lower():
-            return "Invalid API key. Check your .env file."
+            return "Invalid API key. Please check your .env file."
         elif "429" in error:
-            return "Rate limit reached. Wait 1 minute."
+            return "Rate limit reached. Please wait 1 minute and try again."
         elif "connect" in error.lower():
-            return "No internet connection."
+            return "No internet connection detected."
         return f"Error: {error}"
 
+
 # ─────────────────────────────────────────
-# STREAM RESPONSE
+# STREAM GROQ (streaming)
 # ─────────────────────────────────────────
 def stream_groq(
     question: str,
@@ -216,15 +245,13 @@ def stream_groq(
     session_id: str
 ):
     try:
-        messages = build_messages(
-            question, context, session_id
-        )
+        messages = build_messages(question, context, session_id)
 
         stream = groq_client.chat.completions.create(
             model=MODEL_NAME,
             messages=messages,
             temperature=0.5,
-            max_tokens=120,
+            max_tokens=180,   # Raised from 120 to match non-streaming
             stream=True
         )
 
@@ -235,17 +262,43 @@ def stream_groq(
                 full_answer += token
                 yield f"data: {json.dumps({'token': token})}\n\n"
 
-        conversation_manager.add_message(
-            session_id, "user", question
-        )
-        conversation_manager.add_message(
-            session_id, "assistant", full_answer
-        )
+        # Save full streamed response to memory after completion
+        conversation_manager.add_message(session_id, "user", question)
+        conversation_manager.add_message(session_id, "assistant", full_answer)
 
         yield "data: [DONE]\n\n"
 
     except Exception as e:
         yield f"data: {json.dumps({'error': str(e)})}\n\n"
+
+
+# ─────────────────────────────────────────
+# TOPIC-ANCHORED FAISS QUERY BUILDER
+# ─────────────────────────────────────────
+def _build_search_query(question: str, session_id: str) -> str:
+    """
+    Builds a FAISS search query that keeps topic context through
+    conversation turns. Short student replies like "I don't know"
+    or "maybe electrons?" have no topic signal on their own,
+    causing FAISS to drift to unrelated syllabus chunks.
+    Prepending the last AI message anchors the query to the
+    topic actually being discussed.
+    """
+    history = conversation_manager.get_history(session_id)
+
+    # If no history or the question is already detailed, use it as-is
+    if not history or len(question.strip()) >= 80:
+        return question
+
+    last_ai = next(
+        (m["content"] for m in reversed(history)
+         if m["role"] == "assistant"),
+        ""
+    )
+    if last_ai:
+        return f"{last_ai} {question}"[:350]
+    return question
+
 
 # ─────────────────────────────────────────
 # MAIN RAG PIPELINE
@@ -253,58 +306,66 @@ def stream_groq(
 def generate_rag_answer(request):
     """
     Complete Socratic RAG Pipeline:
-    1. FAISS searches syllabus
-    2. Filters by relevance
-    3. Builds context
-    4. Groq generates Socratic response
-    5. Saves to conversation memory
+    1. Determine session ID
+    2. Build topic-anchored FAISS search query
+    3. Search syllabus chunks via FAISS
+    4. Filter by relevance score
+    5. Build context string
+    6. Inject dynamic turn instruction into system prompt
+    7. Call Groq (streaming or full)
+    8. Save exchange to conversation memory
     """
     from retrieval.faiss_search import search
 
-    # Step 1 - Search FAISS
+    # Step 1 — Resolve session ID
+    session_id = (
+        request.session_id
+        if hasattr(request, "session_id") and request.session_id
+        else "default"
+    )
+
+    # Step 2 — Build topic-anchored query
+    search_query = _build_search_query(request.question, session_id)
+
+    # Step 3 — Search FAISS index
     chunks = search(
-        query=request.question,
+        query=search_query,
         top_k=request.top_k,
         topic_filter=request.topic
     )
 
-    # Step 2 - Handle no results
+    # Step 4 — Handle zero results
     if not chunks:
         return {
             "question": request.question,
-            "answer": "I could not find that topic "
-                     "in your GCE Chemistry syllabus. "
-                     "What other concept would you "
-                     "like to explore?",
+            "answer": (
+                "I could not find that topic in your GCE Chemistry "
+                "syllabus. What other concept would you like to explore?"
+            ),
             "context": [],
-            "session_id": getattr(
-                request, 'session_id', 'default'
-            )
+            "session_id": session_id
         }
 
-    # Step 3 - Filter weak matches
+    # Step 5 — Filter weak relevance matches
     filtered = [
         c for c in chunks
         if c.get("score", 1.0) >= RELEVANCE_THRESHOLD
     ]
     final_chunks = filtered if filtered else chunks
 
-    # Step 4 - Build context
+    # Step 6 — Build context string from chunks
     context_text = "\n\n".join([
-        f"[Topic: {c.get('topic', 'Chemistry')}]"
-        f"\n{c.get('text', '')}"
+        f"[Topic: {c.get('topic', 'Chemistry')}]\n{c.get('text', '')}"
         for c in final_chunks
     ])
 
-    # Step 5 - Get session ID
-    session_id = request.session_id \
-        if hasattr(request, 'session_id') \
-        and request.session_id \
-        else 'default'
+    print(
+        f"🎯 Session: {session_id} | "
+        f"Turn: {conversation_manager.get_turn_number(session_id)} | "
+        f"Chunks: {len(final_chunks)}"
+    )
 
-    print(f"🎯 Session: {session_id}")
-
-    # Step 6 - Stream or full response
+    # Step 7 — Stream or full response
     if request.stream:
         return stream_groq(
             request.question,
@@ -312,12 +373,12 @@ def generate_rag_answer(request):
             session_id
         )
 
-    # Step 7 - Generate response
+    # Step 8 — Generate full response
     answer = call_groq(
         question=request.question,
         context=context_text,
         session_id=session_id,
-        temperature=getattr(request, 'temperature', 0.5)
+        temperature=getattr(request, "temperature", 0.5)
     )
 
     return {

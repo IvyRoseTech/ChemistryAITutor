@@ -1,0 +1,26 @@
+# ─── Web Framework ───
+fastapi
+uvicorn[standard]
+python-multipart
+
+# ─── AI - Groq API ───
+groq
+
+# ─── Vector Search ───
+faiss-cpu
+sentence-transformers
+
+# ─── Document Processing ───
+python-docx
+pypdf
+
+# ─── Environment ───
+python-dotenv
+pydantic
+
+# ─── HTTP Client ───
+httpx
+requests
+
+# ─── Data Processing ───
+numpy

@@ -6,31 +6,24 @@ Handles search, generation, and stats routes.
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from schemas import (
-    RAGQueryRequest, RAGQueryResponse,
     RAGChunk, RAGGenerateRequest, RAGGenerateResponse
 )
-from retrieval.faiss_search import search, get_index_stats
-import traceback
+from retrieval.faiss_search import get_index_stats
+from generation import generate_rag_answer   # ✅ moved to top
+import traceback                             # ✅ already at top, keep once
 
 router = APIRouter(prefix="/rag", tags=["RAG"])
 
-# Minimum relevance score to include a chunk
-RELEVANCE_THRESHOLD = 0.3
-
 # ─────────────────────────────────────────
-# /rag/query — Search FAISS + Generate Answer
+# /rag/generate — Search FAISS + Generate Answer
 # ─────────────────────────────────────────
 @router.post("/generate")
 async def generate_answer(request: RAGGenerateRequest):
-    from generation import generate_rag_answer
-    import traceback
-
     try:
         result = generate_rag_answer(request)
 
         if request.stream:
-            from fastapi.responses import StreamingResponse
-            return StreamingResponse(
+            return StreamingResponse(       # ✅ no re-import needed
                 result,
                 media_type="text/event-stream"
             )
@@ -41,9 +34,9 @@ async def generate_answer(request: RAGGenerateRequest):
             context=[
                 RAGChunk(**c) for c in result["context"]
             ],
-            model="groq/llama-3.1-8b-instant",  # ← fixed
+            model="groq/llama-3.1-8b-instant",
             status="success",
-            session_id=result.get(               # ← fixed
+            session_id=result.get(
                 "session_id", request.session_id
             )
         )
@@ -56,91 +49,30 @@ async def generate_answer(request: RAGGenerateRequest):
         )
 
 # ─────────────────────────────────────────
-# /rag/generate — Full RAG Generation
-# ─────────────────────────────────────────
-@router.post("/generate", response_model=RAGGenerateResponse)
-async def generate_answer_endpoint(request: RAGGenerateRequest):
-    """
-    Full RAG generation - retrieves chunks then generates
-    a detailed GCE Chemistry answer using Llama 3.2:3b
-    """
-    try:
-        # Step 1 - Retrieve relevant chunks from FAISS
-        results = search(
-            query=request.question,
-            top_k=request.top_k,
-            topic_filter=request.topic
-        )
-
-        if not results:
-            return RAGGenerateResponse(
-                question=request.question,
-                answer="I cannot find relevant content in your GCE Chemistry syllabus for this question.",
-                context=[],
-                model="llama3.2:3b",
-                status="no_results"
-            )
-
-        chunks = [RAGChunk(**r) for r in results]
-
-        # Step 2 - Stream response if requested
-        if request.stream:
-            from services.llm_service import stream_answer
-            return StreamingResponse(
-                stream_answer(request.question, [c.dict() for c in chunks]),
-                media_type="text/event-stream"
-            )
-
-        # Step 3 - Generate full answer with Llama
-        from services.llm_service import generate_answer
-        llm_result = generate_answer(
-            question=request.question,
-            chunks=[c.dict() for c in chunks],
-            temperature=request.temperature
-        )
-
-        return RAGGenerateResponse(
-            question=request.question,
-            answer=llm_result["answer"],
-            context=chunks,
-            model="llama3.2:3b",
-            status=llm_result["status"]
-        )
-
-    except Exception as e:
-        traceback.print_exc()
-        raise HTTPException(status_code=500, detail=f"Generation failed: {str(e)}")
-
-
-# ─────────────────────────────────────────
-# /rag/stats — Index Statistics
+# /rag/stats — Index + LLM Status
 # ─────────────────────────────────────────
 @router.get("/stats")
 async def get_stats():
     """
-    Get FAISS index statistics and LLM status.
+    Get FAISS index statistics and Groq LLM status.
     """
     stats = get_index_stats()
 
-    # Check Ollama is running
-    llm_status = "unknown"
-    try:
-        import httpx
-        res = httpx.get("http://localhost:11434/api/tags", timeout=3)
-        if res.status_code == 200:
-            models = res.json().get("models", [])
-            names = [m.get("name", "") for m in models]
-            llm_status = "ready" if any("llama3.2" in n for n in names) else "model_missing"
-        else:
-            llm_status = "ollama_error"
-    except Exception:
-        llm_status = "ollama_not_running"
+    # ✅ Check Groq API key instead of Ollama
+    import os
+    groq_key = os.getenv("GROQ_API_KEY", "")
+    if not groq_key:
+        llm_status = "missing_api_key"
+    elif len(groq_key) < 20:
+        llm_status = "invalid_api_key"
+    else:
+        llm_status = "ready"
 
     return {
         "rag": stats,
         "llm": {
-            "model": "llama3.2:3b",
+            "model": "llama-3.1-8b-instant",   # ✅ updated from llama3.2:3b
             "status": llm_status,
-            "endpoint": "http://localhost:11434"
+            "provider": "groq"                  # ✅ updated from ollama
         }
     }

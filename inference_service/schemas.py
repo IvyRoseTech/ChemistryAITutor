@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional, Any
+from typing import List, Optional
+import uuid
 
 # ─────────────────────────────────────────
 # GENERAL SCHEMAS
@@ -60,12 +61,14 @@ class RAGGenerateRequest(BaseModel):
     )
     topic: Optional[str] = Field(None)
     top_k: int = Field(3, ge=1, le=10)
-    max_tokens: int = Field(1024, ge=1, le=4096)
-    temperature: float = Field(0.3, ge=0.0, le=1.0)
+    temperature: float = Field(
+        0.5,                              # ✅ aligned with generation.py
+        ge=0.0, le=1.0
+    )
     stream: bool = Field(False)
     session_id: str = Field(
-        "default",
-        description="Unique session per student"
+        default_factory=lambda: str(uuid.uuid4()),  # ✅ unique per student
+        description="Unique session ID per student conversation"
     )
 
 
@@ -73,10 +76,11 @@ class RAGGenerateResponse(BaseModel):
     question: str
     answer: str
     context: List[RAGChunk]
-    model: str = "groq/llama-3.1-8b-instant"  # ← fixed
+    model: str = "groq/llama-3.1-8b-instant"
     status: str = "success"
-    session_id: str = "default"
-    tokens_used: Optional[int] = None
+    session_id: str
+    tokens_used: Optional[int] = None          # kept — can be populated later
+
 
 # ─────────────────────────────────────────
 # HEALTH CHECK SCHEMA
@@ -84,5 +88,5 @@ class RAGGenerateResponse(BaseModel):
 class HealthResponse(BaseModel):
     status: str
     rag_index: dict
-    llm_model: str = "groq/llama-3.1-8b-instant"  # ← updated
+    llm_model: str = "groq/llama-3.1-8b-instant"
     service: str = "GCE Chemistry AI Tutor"

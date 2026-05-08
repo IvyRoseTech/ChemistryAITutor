@@ -16,6 +16,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from api.rag import router as rag_router
 from retrieval.faiss_index import load_index, index_exists
 from retrieval.faiss_search import initialize_search, get_index_stats, search
+from retrieval.embeddings import load_embedding_model
 from schemas import RAGQueryRequest, RAGQueryResponse, HealthResponse
 
 # ─────────────────────────────────────────
@@ -68,6 +69,13 @@ async def startup_event():
     else:
         print("⚠️  No FAISS index found.")
         print("   Run: python ingestion/ingest.py")
+
+    print("🔤 Pre-loading embedding model...")
+    try:
+        load_embedding_model()
+        print("✅ Embedding model ready")
+    except Exception as e:
+        print(f"❌ Failed to load embedding model: {e}")
 
     print("─" * 50)
     print("🧪 GCE Chemistry AI Tutor is ready!\n")

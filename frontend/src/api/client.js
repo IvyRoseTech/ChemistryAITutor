@@ -2,14 +2,11 @@ import axios from 'axios';
 import { auth } from '../firebase';
 
 // ============================================
-// 1. AXIOS INSTANCE — TWO CLIENTS
-// One for Firebase backend, one for AI backend
+// 1. AXIOS INSTANCE
 // ============================================
-
-// Main app client (Firebase auth protected)
 const client = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000',
-    timeout: 120000, // 2 minutes (AI responses take time)
+    baseURL: '',
+    timeout: 120000,
     headers: {
         'Content-Type': 'application/json',
     },
@@ -90,24 +87,38 @@ export const getTopics = async () => {
 // ============================================
 // 7. AI CHAT — Main Function ChatBox Uses
 // ============================================
-export const askQuestion = async (question, topic = null) => {
-    // Calls your FastAPI /rag/generate endpoint
+
+// ✅ REMOVED: module-level SESSION_ID constant
+// Session ID is now managed entirely by ChatPage via useRef
+// and passed explicitly into askQuestion — no fallback needed here
+
+export const askQuestion = async (
+    question,
+    topic = null,
+    sessionId        // ✅ Required — always passed from ChatBox
+) => {
+    if (!sessionId) {
+        // Safety guard — should never happen if ChatPage is set up correctly
+        console.warn("askQuestion called without sessionId — turn tracking will break");
+    }
+
     const response = await client.post('/rag/generate', {
-        question: question,
-        topic: topic,       // optional topic filter
-        top_k: 3,           // number of syllabus chunks to retrieve
-        max_tokens: 512,    // max answer length
-        temperature: 0.1,   // low = factual answers
-        stream: false
+        question,
+        topic,
+        top_k: 3,
+        temperature: 0.5,   // ✅ Removed max_tokens — no longer in schema
+        stream: false,
+        session_id: sessionId
     });
+
     return response.data;
 };
 
 // Search without generating answer
 export const searchSyllabus = async (query, topic = null) => {
     const response = await client.post('/rag/query', {
-        query: query,
-        topic: topic,
+        query,
+        topic,
         top_k: 5
     });
     return response.data;
@@ -127,7 +138,7 @@ export const submitQuiz = async (submissionData) => {
 };
 
 // ============================================
-// 9. HEALTH CHECK — Verify AI is running
+// 9. HEALTH CHECK
 // ============================================
 export const checkHealth = async () => {
     try {

@@ -220,7 +220,7 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className="pt-8 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-xs text-gray-400">© 2024 GCE Prep. All rights reserved.</p>
+                        <p className="text-xs text-gray-400">© 2026 GCE Prep. All rights reserved.</p>
                         <div className="flex gap-6">
                             <a className="text-gray-400 hover:text-primary" href="#">
                                 <span className="material-symbols-outlined text-xl">social_leaderboard</span>
