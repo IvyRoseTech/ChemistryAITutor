@@ -1,0 +1,2032 @@
+{
+  "subject": "GCE A-Level Chemistry",
+  "years_available": [
+    "2021",
+    "2020",
+    "2019",
+    "2018",
+    "2017",
+    "2016",
+    "2015"
+  ],
+  "year_summary": {
+    "2015": {
+      "papers": [
+        1,
+        2
+      ],
+      "total_questions": 19
+    },
+    "2016": {
+      "papers": [
+        1,
+        2
+      ],
+      "total_questions": 13
+    },
+    "2017": {
+      "papers": [
+        1,
+        2
+      ],
+      "total_questions": 0
+    },
+    "2018": {
+      "papers": [
+        1,
+        2
+      ],
+      "total_questions": 18
+    },
+    "2019": {
+      "papers": [
+        1,
+        2
+      ],
+      "total_questions": 44
+    },
+    "2020": {
+      "papers": [
+        1,
+        2
+      ],
+      "total_questions": 38
+    },
+    "2021": {
+      "papers": [
+        1,
+        2
+      ],
+      "total_questions": 0
+    }
+  },
+  "papers": [
+    {
+      "year": 2015,
+      "paper": 1,
+      "filename": "Al-2015-Chemistry-1.pdf",
+      "total_mcq": 0,
+      "total_structured": 0,
+      "mcq_questions": [],
+      "structured_questions": []
+    },
+    {
+      "year": 2015,
+      "paper": 2,
+      "filename": "AL-2015-Chemistry-2.pdf",
+      "total_mcq": 15,
+      "total_structured": 4,
+      "mcq_questions": [
+        {
+          "id": "2015_p2_mcq_1",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "a. (i) Define ‘Mole of a substance’ (ii) Calculate the mass of iron (in grams) contained in 250 cm3 of 0.1M iron (III) chloride solution",
+          "topic": "Chemical Calculations",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_2",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "b. When NaOH is dissolved in water, the temperature of the solution rises, but when NH4NO3 is dissolved in water, the temperature of the solution falls. Explain the difference in behavior",
+          "topic": "Thermodynamics",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_3",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "c. (i) Sketch an energy diagram that can be used to determine its heat of solvation (hydration energy) (ii) Calculate the solvation energy",
+          "topic": "Thermodynamics",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_4",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "d. (i) What do you understand by “Order of a reaction”? (ii) Given the following data for the reaction A + 2B → C Experiment Initial [A] mol dm-3 Initial [B] mol dm-3 Rate of formation of C mol dm-3 s-1 0.10 0.10 0.001 2 0.10 0.20 0.004 3 0.20 0.10 0.001 4 0.20 0.30 0.009 A: Determine the overall order of the reaction B: Write the rate expression and calculate the value of the rate constant and give its units C: Based on the rate expression, suggest a mechanism for the reaction",
+          "topic": "Kinetics",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_5",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 3,
+          "question": "a. (i) Explain why A: Fluorine has only one oxidation number B: Chloride exhibits an oxidation number of +7 (ii) Give the formula of an oxo-acid of chlorine with oxidation number of +5",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_6",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 3,
+          "question": "b. (i) On the space below sketch a graph to show the variation of acid strength of the hydrogen halides HF (ii) Explain the shape of the graph",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_7",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 3,
+          "question": "c. Give balanced equations for the reaction of chlorine with i. Cold dilute KOH ii. Hot concentrated KOH",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_8",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 3,
+          "question": "d. Complete the table below by writing the formulae and names of compounds of Sulphur with the corresponding oxidation states Oxidation state Formula of compound Name of Sulphur compound +2 +4 +6 +7",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_9",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 3,
+          "question": "e. Give equations to show how Sulphur or its compound undergoes i. Oxidation ii. Reduction iii. Disproportionation",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_10",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 3,
+          "question": "f. The key reaction in the Contact Process for the manufacture of Sulphuric acid is the oxidation of SO2 to SO3 2SO2(g) + O2(g) ⇌ 3SO3(g) ∆Hθ298 = −192 kJ/mol (i) State and explain how the yield of SO3 is increased in practice (ii) How is SO3 converted to sulphuric acid?",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_11",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 4,
+          "question": "a. (i) Complete the table by giving the formulae of the simple hybrids of the elements of period 2 to neon Element Li Be B C N O F e Formula of hybrid (ii) Write equations to show the reaction of the hybrids of Li and F with water. Explain the differences in their reactions with water in terms of their structure and bonding Equations Explanation (iii) Suggest a reason why the hybrid of carbon does not react with water",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_12",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 4,
+          "question": "b. What is the difference between a d-block element and a transition element? Give an example of each",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_13",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 4,
+          "question": "c. State and explain the variation in atomic radius across the first transition series Scandium to zinc",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_14",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 4,
+          "question": "d. (i) Why are transition metal compounds colored? (ii) Copper is a transition metal. Explain why some of its compounds are white",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2015_p2_mcq_15",
+          "year": 2015,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 4,
+          "question": "e. (i) Complete the table below by giving the oxides of manganese in the corresponding oxidation states Oxidation states +2 +4 +6 +7 Formula of oxides of manganese (ii) Explain why manganese can exhibit these oxidation states",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Option text",
+            "Option text",
+            "Option text",
+            "Option text"
+          ],
+          "correct_index": null
+        }
+      ],
+      "structured_questions": [
+        {
+          "id": "2015_p2_structured_1",
+          "year": 2015,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 1,
+          "question": "a. What do you understand by the term First Ionization Energy? b. (i) What do the lines represent? (ii) What is the difference between the Lyman and the Balmer series of lines? (iii) State one important information about the structure of the atom that can be obtained from the emission spectrum of an element c. (i) Write the electronic configuration of the outermost shell of M (ii) Predict the Group of the periodic table to which M belongs Explain your reasoning d. (i) Briefly explain the shape of the ammonia (NH3) molecule (2 marks) (ii) What is the difference between a covalent bond and intermolecular force? (iii) Using a suitable example, explain how an intermolecular force can affect the molar mass of a substance (4 marks) e. (i) What is an acid buffer? (ii) Using equations only, show how the acid buffer will react in the presence of A: Excess acid B: Excess base (alkali) (iii) A solution contains 0.02M CH3COOH and 0.2M CH3COONa. Calculate the pH of the solution which results from the addition of 50 cm3 of 0.04M NaOH to the solution (KaCH3COOH = 1.7 x 10-5 mol dm-3)",
+          "topic": "Physical and General Chemistry",
+          "marks": 10,
+          "model_answer": null
+        },
+        {
+          "id": "2015_p2_structured_2",
+          "year": 2015,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 2,
+          "question": "a. (i) Define ‘Mole of a substance’ (ii) Calculate the mass of iron (in grams) contained in 250 cm3 of 0.1M iron (III) chloride solution b. When NaOH is dissolved in water, the temperature of the solution rises, but when NH4NO3 is dissolved in water, the temperature of the solution falls. Explain the difference in behavior c. (i) Sketch an energy diagram that can be used to determine its heat of solvation (hydration energy) (ii) Calculate the solvation energy d. (i) What do you understand by “Order of a reaction”? (ii) Given the following data for the reaction A + 2B → C Experiment Initial [A] mol dm-3 Initial [B] mol dm-3 Rate of formation of C mol dm-3 s-1 1 0.10 0.10 0.001 2 0.10 0.20 0.004 3 0.20 0.10 0.001 4 0.20 0.30 0.009 A: Determine the overall order of the reaction B: Write the rate expression and calculate the value of the rate constant and give its units C: Based on the rate expression, suggest a mechanism for the reaction e. Trichloromethane (CHCl3) and ethyl ethanoate (CH3CO2C2H5) from a completely miscible solution which does not obey Raoult’s Law (i) State Raoult’s law (ii) Explain why the liquid mixture would deviate from Raoult’s law (iii) Predict and explain the change in temperature when the two liquids are mixed (iv) Draw a labelled diagram of variation of total pressure against composition for the mixture",
+          "topic": "Physical and General Chemistry",
+          "marks": 10,
+          "model_answer": null
+        },
+        {
+          "id": "2015_p2_structured_3",
+          "year": 2015,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 3,
+          "question": "a. All halogens (except fluorine) from compounds I which they have oxidation numbers ranging from -1 to +7 (i) Explain why A: Fluorine has only one oxidation number B: Chloride exhibits an oxidation number of +7 (ii) Give the formula of an oxo-acid of chlorine with oxidation number of +5 b. (i) On the space below sketch a graph to show the variation of acid strength of the hydrogen halides HF (ii) Explain the shape of the graph c. Give balanced equations for the reaction of chlorine with i. Cold dilute KOH ii. Hot concentrated KOH d. Complete the table below by writing the formulae and names of compounds of Sulphur with the corresponding oxidation states Oxidation state Formula of compound Name of Sulphur compound +2 +4 +6 +7 e. Give equations to show how Sulphur or its compound undergoes i. Oxidation ii. Reduction iii. Disproportionation f. The key reaction in the Contact Process for the manufacture of Sulphuric acid is the oxidation of SO2 to SO3 2SO2(g) + O2(g) ⇌ 3SO3(g) ∆Hθ298 = -192 kJ/mol (i) State and explain how the yield of SO3 is increased in practice (ii) How is SO3 converted to sulphuric acid?",
+          "topic": "Inorganic (Mineral) Chemistry",
+          "marks": 10,
+          "model_answer": null
+        },
+        {
+          "id": "2015_p2_structured_4",
+          "year": 2015,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 4,
+          "question": "a. (i) Complete the table by giving the formulae of the simple hybrids of the elements of period 2 to neon Element Li Be B C N O F e Formula of hybrid (ii) Write equations to show the reaction of the hybrids of Li and F with water. Explain the differences in their reactions with water in terms of their structure and bonding - Equations - Explanation (iii) Suggest a reason why the hybrid of carbon does not react with water b. What is the difference between a d-block element and a transition element? Give an example of each c. State and explain the variation in atomic radius across the first transition series Scandium to zinc d. (i) Why are transition metal compounds colored? (ii) Copper is a transition metal. Explain why some of its compounds are white e. (i) Complete the table below by giving the oxides of manganese in the corresponding oxidation states Oxidation states +2 +4 +6 +7 Formula of oxides of manganese (ii) Explain why manganese can exhibit different oxidation states",
+          "topic": "Inorganic (Mineral) Chemistry",
+          "marks": 10,
+          "model_answer": null
+        }
+      ]
+    },
+    {
+      "year": 2016,
+      "paper": 1,
+      "filename": "Al-2016-chemistry-1.pdf",
+      "total_mcq": 0,
+      "total_structured": 0,
+      "mcq_questions": [],
+      "structured_questions": []
+    },
+    {
+      "year": 2016,
+      "paper": 2,
+      "filename": "AL-2016-CHEMISTRY-2.pdf",
+      "total_mcq": 8,
+      "total_structured": 5,
+      "mcq_questions": [
+        {
+          "id": "2016_p2_mcq_1",
+          "year": 2016,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Determine the order of the reaction with respect to H2 and I2",
+          "topic": "Physical and General Chemistry",
+          "options": [
+            "Zero order with respect to H2 and first order with respect to I2",
+            "First order with respect to H2 and zero order with respect to I2",
+            "First order with respect to H2 and first order with respect to I2",
+            "Zero order with respect to H2 and zero order with respect to I2"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2016_p2_mcq_2",
+          "year": 2016,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "What is the overall order of the reaction?",
+          "topic": "Physical and General Chemistry",
+          "options": [
+            "Zero order",
+            "First order",
+            "Second order",
+            "Third order"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2016_p2_mcq_3",
+          "year": 2016,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 3,
+          "question": "Name the solution which could be used in the left-hand beaker",
+          "topic": "Physical and General Chemistry",
+          "options": [
+            "Potassium chloride solution",
+            "Potassium hydroxide solution",
+            "Potassium nitrate solution",
+            "Potassium sulfate solution"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2016_p2_mcq_4",
+          "year": 2016,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 3,
+          "question": "Suggest a solution that is suitable for the salt bridge",
+          "topic": "Physical and General Chemistry",
+          "options": [
+            "Potassium chloride solution",
+            "Potassium hydroxide solution",
+            "Potassium nitrate solution",
+            "Potassium sulfate solution"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2016_p2_mcq_6",
+          "year": 2016,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 4,
+          "question": "Write the outer electron configuration of the halogens",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "ns2 np5",
+            "ns2 np6",
+            "ns2 np3",
+            "ns2 np1"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2016_p2_mcq_7",
+          "year": 2016,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 4,
+          "question": "State and explain how the following properties will vary down group 17 (Group VII) of the periodic table",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Volatility: increases, Electro-positivity: decreases",
+            "Volatility: decreases, Electro-positivity: increases",
+            "Volatility: increases, Electro-positivity: increases",
+            "Volatility: decreases, Electro-positivity: decreases"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2016_p2_mcq_9",
+          "year": 2016,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 5,
+          "question": "What name is given to this type of reaction?",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Neutralization reaction",
+            "Oxidation-reduction reaction",
+            "Acid-base reaction",
+            "Precipitation reaction"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2016_p2_mcq_12",
+          "year": 2016,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 7,
+          "question": "Name the source of ammonia used in this process",
+          "topic": "Inorganic Chemistry",
+          "options": [
+            "Haber process",
+            "Bosch process",
+            "Fischer-Tropsch process",
+            "Mond process"
+          ],
+          "correct_index": null
+        }
+      ],
+      "structured_questions": [
+        {
+          "id": "2016_p2_structured_1",
+          "year": 2016,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 1,
+          "question": "a. (i) Define the second ionizing energy of fluorine (ii) Write an equation to represent the second ionization of fluorine (iii) Using the axis below, sketch a graph to show the successive ionization energies of fluorine (iv) Give reasons for the shape of your graph b. (i) Draw the “dot-and-cross” diagram for carbonic acid, H2CO3 (ii) Draw the resonance structures of the HCO3 anion (iii) Complete the table below by stating the molecular shapes and bond angles of the following species Species Molecular shape Bond angle CF4 NF3 CH2Cl2 H3O+ c. The following reaction occurs at 450oC H2(g) + I2(g) = 2HI(g) Experiment Initial [H2] mol dm-3 Initial [I2] mol dm-3 Initial rate of production of HI mol dm-3 s-1 1 0.0113 0.0011 1.9 x 10-23 2 0.0220 0.0033 1.1 x 10-22 3 0.0550 0.0011 9.3 x 10-23 4 0.0220 0.0056 1.9 x 10-22 i. Determine the order of the reaction with respect to H2 and I2 ii. What is the overall order of the reaction?",
+          "topic": "Physical and General Chemistry",
+          "marks": 10,
+          "model_answer": null
+        },
+        {
+          "id": "2016_p2_structured_2",
+          "year": 2016,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 2,
+          "question": "a. (i) Write the outer electron configuration of the halogens (ii) State and explain how the following properties will vary down group 17 (Group VII) of the periodic table A: Volatility B: Electropositivity b. A solution of chlorine in water is used as a disinfectant. The following chemical equation indicates the reaction between water and chlorine Cl2(g) + H2O(l) → Cl-(aq) + ClO-(aq) + 2H+(aq) i. Give a balanced equation for the reaction that occurs when a concentrated solution of NaOH is added to this medium ii. What name is given to this type of reaction?",
+          "topic": "Inorganic Chemistry",
+          "marks": 10,
+          "model_answer": null
+        },
+        {
+          "id": "2016_p2_structured_3",
+          "year": 2016,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 3,
+          "question": "c. (i) Write balanced equations for the preparation of HF and HI from CaF2 and NaI respectively (ii) Explain any similarity or difference in the methods of preparation of HF and HI d. Nitric acid is manufactured by catalytic oxidation of ammonia i. Name the source of ammonia used in this process ii. Write a balanced equation for the oxidation of ammonia to nitrogen monoxide iii. Suggest the temperature at which the reaction in d(ii) occurred as well as the name of the catalyst that was used?",
+          "topic": "Inorganic Chemistry",
+          "marks": 10,
+          "model_answer": null
+        },
+        {
+          "id": "2016_p2_structured_4",
+          "year": 2016,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 4,
+          "question": "e. Sulphuric acid is prepared from Sulphur dioxide through the reaction 2SO2(g) + O2(g) ⇌ 2SO3(g) i. Why is a pressure of one atmosphere maintained taking into consideration that increasing the pressure will favor the production of more SO3? ii. Which catalyst is used in the process?",
+          "topic": "Inorganic Chemistry",
+          "marks": 10,
+          "model_answer": null
+        },
+        {
+          "id": "2016_p2_structured_5",
+          "year": 2016,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 5,
+          "question": "d. A student measuring standard electrode potentials has the following set up in which he connected a half-cell to standard hydrogen electrode i. Name the solution which could be used in the left-hand beaker ii. Suggest a solution that is suitable for the salt bridge iii. Write the cell diagram for the arrangement above",
+          "topic": "Physical and General Chemistry",
+          "marks": 10,
+          "model_answer": null
+        }
+      ]
+    },
+    {
+      "year": 2017,
+      "paper": 1,
+      "filename": "Al-2017-chemistry-1.pdf",
+      "total_mcq": 0,
+      "total_structured": 0,
+      "mcq_questions": [],
+      "structured_questions": []
+    },
+    {
+      "year": 2017,
+      "paper": 2,
+      "filename": "Al-2017-chemistry-2.pdf",
+      "total_mcq": 0,
+      "total_structured": 0,
+      "mcq_questions": [],
+      "structured_questions": []
+    },
+    {
+      "year": 2018,
+      "paper": 1,
+      "filename": "AL-2018-CHEMISTRY-1.pdf",
+      "total_mcq": 0,
+      "total_structured": 13,
+      "mcq_questions": [],
+      "structured_questions": [
+        {
+          "id": "2018_p1_structured_1",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 2,
+          "question": "Select the reagent(s) and reaction condition(s) necessary for the conversion, CH3CH3—Cl1. What is the oxidation number of cobalt in the complex K3[Co(CO)4]3H2O? A +6 B -6 C +3 D -3",
+          "topic": "Redox Reactions",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_2",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 3,
+          "question": "Atoms of isotopes of the same element are identical in which of the following aspects? A Mass number B Number of electrons C Sum of the number of protons and number of neutrons D Sum of the number of electrons and number of neutrons",
+          "topic": "Atomic Structure",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_3",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 4,
+          "question": "The structure of the amino acid alanine is CH3CH2NH—c—COOH. On analysis of a compound it was found to contain 29.1% of sodium, 40.5% sulphur and 30.4% oxygen. What is the empirical formula of the compound? (R. A. M.: Na = 23.0, O = 16.0, S = 32.0) A Na2SO3 B Na2SO4 C Na2SO3 D Na2SO7",
+          "topic": "Chemical Calculations",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_4",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 5,
+          "question": "Give the structural formula of the species formed by alanine at pH 7 CH3CH2NH2—c—COOH. The structural formula of the oxalate ion is given below CH3COO—c—COOH. This ion is: A Monodentate B Tri-dentate C Hexadentate D Bi-dentate",
+          "topic": "Chemical Bonding",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_5",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 6,
+          "question": "Which of the following is the best description of the outermost electrons of a magnesium atom (atomic number 12)? A Two S electrons B Three P electrons C Two P electrons D One S electron",
+          "topic": "Atomic Structure",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_6",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 7,
+          "question": "A substance gave a green flame test colour. On heating it produced an acidic gas and another gas that rekindled a glowing splint. Which of the following could be the substance? A Barium nitrite B Barium nitrate C Barium carbonate D Copper carbonate",
+          "topic": "Chemical Reactions",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_7",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 8,
+          "question": "The rate equation for the reaction 2NO(g) + Cl2(g) Rate = K[NO(g)]2[Cl2(g)] What is the rate of the reaction if the concentration of NO(g) and Cl2(g) are both 0.005 mol/dm3? A k x 0.005 x 0.005 mol2/dm6 B k x 0.005 x 0.005 mol2/dm6 C k x (0.005)2 x 0.005 mol3/dm9 D k x (0.005)2 x 0.0075 mol3/dm9",
+          "topic": "Chemical Kinetics",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_8",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 9,
+          "question": "An alkene reacts with Ozone (ozonolysis) to form CH3CH2CHO and (CH3)2CO. The alkene could be: A CH3CH=CHCH(CH3)2 B CH3CH2CH=CHCH3 C CH3CH=CH(CH3)2 D CH3CH2CH=CH(CH3)",
+          "topic": "Organic Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_9",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 10,
+          "question": "Given the following standard electrode potentials for the following half-cells Cd2+ (aq) / Cd(s) = -0.40 V Ni2+ (aq) / Ni(s) = -0.25 V Calculate the standard e.m.f. of the cell Cd(s) / Cd2+ (aq) / Ni2+ (aq) / Ni(s) A +0.65 V B +0.25 V C +0.15 V D -0.65 V",
+          "topic": "Electrochemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_10",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 11,
+          "question": "Which of the following compounds will give an orange precipitate when reacted with 2, 4-dinitrophenylhydrazine and form a silver mirror on warning with ammoniacal silver nitrate? A CH3CH2CH2COCl B CH3CH2CH(CH3)CHO C CH3CH2COCH2CH3 D CH3CH(CH3)CH(OH)C=CH",
+          "topic": "Chemical Reactions",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_11",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 12,
+          "question": "2NOCl (g) is Which of the following best describes the shape and bond angles of the sulphate ion, SO42'? A Tetrahedral B Pyramidal, C Square planar D Trigonal planar",
+          "topic": "Molecular Shape",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_12",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 13,
+          "question": "How many molecules are there in 32.5 g of chlorine molecule (Cl2) (RMM of Cl2 = 71, Avogadro number = 6.022 x 10^23)? A 2.76 x 10^23 B 4.58 x 10^23 C 9.15 x 10^23 D 5.51 x 10^23",
+          "topic": "Chemical Calculations",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p1_structured_13",
+          "year": 2018,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 14,
+          "question": "Arrange the following in order of increasing acid strength, starting with the least acidic: CH3COOH, CH3COOH, CH3CHCOOH, CH2ClCOOH. A CH3COOH, CH3CHCOOH, CH2ClCOOH B CH3COOH, CH3CHCOOH, CH2ClCOOH C CH3COOH, CH3CHCOOH, CH2ClCOOH D CH3COOH, CH3CHCOOH, CH2ClCOOH",
+          "topic": "Acid-Base Chemistry",
+          "marks": 0,
+          "model_answer": null
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "paper": 2,
+      "filename": "AL-2018-CHEMISTRY-2.pdf",
+      "total_mcq": 0,
+      "total_structured": 5,
+      "mcq_questions": [],
+      "structured_questions": [
+        {
+          "id": "2018_p2_structured_1",
+          "year": 2018,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 1,
+          "question": "This question is on the mole concept, bonding, equilibria and energetics, (a) Define \"mole\" of a substance. (b) 25 cm^3 of a 0.005 mol/dm^3 solution of hydrated sodium thiosulphate (Na2S2O3.5H2O) was mixed with 25 cm^3 of 0.05 mol/dm^3 iodine solution and allowed to react. (i) Calculate the number of moles of sodium thiosulphate used. (2 marks) +/2 (aq) ~> S4°6 (aq) + 2 /2 (ii) Determine the limiting reagent, given the balanced equation: 2S203 (aq) 3 (aq) (iii) Which indicator is most suitable for the titration of iodine solution with sodium thiosulphate? (3 marks) (c) (i) Draw a clear diagram to show the shape of a water molecule Molecule H2O Shape (ii) Explain the shape of H2O as shown in C (i) above (2 marks) (d) (i) Define an acid and a base in terms of electron transfer. (ii) illustrate your answer by considering the reaction between NH3 and BF3. (3 marks) (e) A buffer solution is made by adding 75.0 g of sodium ethanoate (CH3CHNa) to 500 cm^3 of a 0.64 M solution of ethanoic acid, CH3COOH (pKa = 4.8) (RAM: C = 12, O = 16, Na = 23, H = 1) (i) What is a buffer solution? (ii) Write equations to show how the buffer system above neutralises: A: H+ (aq) B: OH- (aq) (iii) Calculate the pH of the solution resulting from (e) above. (5 marks) (iv) Define lattice energy (v) Draw a Born-Haber cycle for the formation of Magnesium Oxide, MgO (s). (4 marks) (TOTAL = 20 marks)",
+          "topic": "Physical and General Chemistry",
+          "marks": 20,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p2_structured_2",
+          "year": 2018,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 2,
+          "question": "Draw well-labelled diagram of the mass spectrometer. (5 marks) Turn Over 3 -/0715/2/B gcerevision.com 4 (b) A mass spectrometer gave the following data for a sample of naturally occurring Germanium. Detector current /arbitrary units Relative abundance Isotope 6.83 70 9.13 72 2.60 73 74 12.17 2.60 76 (i) Complete the above table by calculating the relative abundance of each isotope. (ii) Determine the relative atomic mass of Germanium. (5 marks) (c) Under specified conditions of temperature and pressure, ice, liquid water and water vapour co-exist in a heterogeneous dynamic equilibrium. (i) Explain the term \"heterogeneous equilibrium\" (ii) How many phases and how many components exist in the equilibrium? (3 marks) (d) (i) Define “order of reaction’ (ii) State two methods by which the rate of the reaction below can be followed. 2MnOHaq) + 5C2024 - M+ 16H+ M- > 2Mn2+ M+ 10CO2 (q) + 8H2O (X) 3 -/0715/2/B gcerevision.com 5 (iii) The data in the table below relate to the general reaction 2A + B —* C + D at 500 K. Initial rate /mol/dm^3/s 1 - 3 - 3 [B] /mol/dm^3 [A] /mol/dm^3 Experiment 1.50 x 10^5 0.20 0.130 1 - 5 6.50 x 10^5 0.40 0.130 2 - 5 3.00 x 10^5 0.40 0.065 J - 5 0.75 x 10^5 0.20 0.065 4 A: Determine the order of reaction with respect to A and with respect to B. B: Calculate the value of the Rate constant from experiment 1. (7 marks) (TOTAL = 20 marks)",
+          "topic": "Physical and General Chemistry",
+          "marks": 20,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p2_structured_3",
+          "year": 2018,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 3,
+          "question": "This question concerns the d-block elements of the periodic table. The elements Cobalt, Nickel, Iron and Zinc are of the d-block. (i) Which of the elements above is (are) not (a) transition metal (s). Explain. (ii) Distinguish between a d-block element and a transition metal. (iii) How is a complex ion formed by a transition metal. (iv) What do you understand by the coordination number of a complex ion. v Turn Over 3 -/0715/2/B gcerevision.com 6 (v) Give the name of a complex cation formed by cobalt and draw its shape. /.",
+          "topic": "Inorganic Chemistry",
+          "marks": 9,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p2_structured_4",
+          "year": 2018,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 4,
+          "question": "This question is on the Group VII elements of the periodic. (Fluorine, Chlorine, Bromine and Iodine) (i) Give the general outermost shell electronic configuration of these elements (ii) Give the chemical formula in each case of one compound of Chlorine in which the oxidation number is ; compound oxidation state +1 +7 (iii) The halogens undergo disproportionation reactions, using equation give an example of a reaction in which Chlorine undergoes disproportionation (iv) Arrange the oxo-acids of chlorine (HClO, HClO2, HClO3, HClO4) in order of decreasing acid strength starting with the strongest. Explain your reasoning. (6 marks)",
+          "topic": "Inorganic Chemistry",
+          "marks": 6,
+          "model_answer": null
+        },
+        {
+          "id": "2018_p2_structured_5",
+          "year": 2018,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 5,
+          "question": "Sulphur exhibits several oxidation states in its compound. (i) Complete the table below by giving either the formula of the compound or the oxidation state of sulphur. Oxidation state of sulphur 2 4 6 8 (ii) Give the formula of the compound in which sulphur has an oxidation state of 6. (iii) Give the formula of the compound in which sulphur has an oxidation state of 8. (iv) Give the formula of the compound in which sulphur has an oxidation state of 2. (v) Give the formula of the compound in which sulphur has an oxidation state of 4. (6 marks)",
+          "topic": "Inorganic Chemistry",
+          "marks": 6,
+          "model_answer": null
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "paper": 1,
+      "filename": "AL-2019-CHEMISTRY-1.pdf",
+      "total_mcq": 11,
+      "total_structured": 10,
+      "mcq_questions": [
+        {
+          "id": "2019_p1_mcq_1",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 1,
+          "question": "An object placed on the path of a cathode ray in a cathode ray tube produces a sharp shadow on the screen placed at the anode. This statement indicates that",
+          "topic": "Particle Nature of Matter",
+          "options": [
+            "Electrons behave as a wave",
+            "Electrons travel in straight lines",
+            "Electrons have both wave and particle properties",
+            "Electrons are negatively charged"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_2",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Chlorate(I) ions in solution disproportionate on heating according to the equation: 3ClO-(aq) → 2Cl-(aq) + ClO3-(aq) Select the oxidation states of chlorine in each of the three ions.",
+          "topic": "Redox Reactions",
+          "options": [
+            "-1 +3 +1",
+            "-1 +5 -1",
+            "+1 +5 -1",
+            "-1 +5 +1"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_3",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 3,
+          "question": "What kind of binding forces hold atoms together in anethanoic acid (CH3COOH) molecule?",
+          "topic": "Intermolecular Forces",
+          "options": [
+            "Hydrogen bonding",
+            "Ionic bonding",
+            "Dipole-dipole attraction",
+            "Covalent bonding"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_4",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 4,
+          "question": "What happens when cyclohexane (C6H12) is added to propanone (CH3COCH3),",
+          "topic": "Intermolecular Forces",
+          "options": [
+            "There is a slight rise in temperature",
+            "The vapour pressure decreases slightly",
+            "The mixture can be separated completely by fractional distillation",
+            "The dipole-dipole attractions in propanone are broken"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_5",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 5,
+          "question": "Why does the rate of a gaseous reaction increase with increase in pressure at constant temperature?",
+          "topic": "Rate of Reaction",
+          "options": [
+            "The particles have more space to move about",
+            "More particles have energy that exceeds the activation energy",
+            "The particles move faster",
+            "There are more frequent collisions between particles"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_6",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "A compound is made up of 86% carbon and 14% hydrogen. What is its empirical formula?",
+          "topic": "Empirical Formula",
+          "options": [
+            "CH",
+            "CH2",
+            "CH3",
+            "CH4"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_7",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 7,
+          "question": "Solutions of transition metal ions are coloured because",
+          "topic": "Transition Metals",
+          "options": [
+            "The ions have variable oxidation states",
+            "The energy difference between 3d and 4s orbitals is very close",
+            "The ions form complexes with different ligands",
+            "The ions have unpaired d-electrons which absorbs and emit light within the visible region of the electromagnetic spectrum"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_8",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 8,
+          "question": "Which of the following compounds of sulphur undergoes disproportionation in an acid medium?",
+          "topic": "Redox Reactions",
+          "options": [
+            "S2Cl2",
+            "Na2SO3",
+            "Na2SO4",
+            "Na2SO3"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_9",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 9,
+          "question": "Identify the type of reaction in the conversion CH3CH3 + Cl2 → CH3CH2Cl + HCl",
+          "topic": "Mechanisms of Reaction",
+          "options": [
+            "Nucleophilic substitution",
+            "Electrophilic addition",
+            "Free radical substitution",
+            "Free radical addition"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_10",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 10,
+          "question": "Text Box: 0.2 g of a volatile liquid on complete evaporation occupied a volume of 30 cm3 at standard temperature and pressure (0 °C, 1 atm). The relative molecular mass of the liquid can be calculated from the expression",
+          "topic": "Molecular Mass",
+          "options": [
+            "2240 X 0.20 / 30",
+            "24000 X 0.20 / 20",
+            "22400 / 0.20 X 30",
+            "30 / 0.20 X 23400"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p1_mcq_11",
+          "year": 2019,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 11,
+          "question": "In which of the following reactions is the enthalpy change likely to be exothermic (ΔH < 0)",
+          "topic": "Enthalpy Change",
+          "options": [
+            "H+(aq) + OH-(aq) → H2O(l)",
+            "CH3COOH(aq) <===>CH3COO- (aq) +H+(aq)",
+            "O-(g) +e → O2-(g)",
+            "Mg(g) →"
+          ],
+          "correct_index": null
+        }
+      ],
+      "structured_questions": [
+        {
+          "id": "2019_p1_structured_1",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 2,
+          "question": "Chlorate(I) ions in solution disproportionate on heating according to the equation: 3ClO-(aq) → 2Cl-(aq) + ClO3-(aq) Select the oxidation states of chlorine in each of the three ions.",
+          "topic": "Redox Reactions",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p1_structured_2",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 3,
+          "question": "What kind of binding forces hold atoms together in anethanoic acid (CH3COOH) molecule?",
+          "topic": "Intermolecular Forces",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p1_structured_3",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 4,
+          "question": "What happens when cyclohexane (C6H12) is added to propanone (CH3COCH3),",
+          "topic": "Physical Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p1_structured_4",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 5,
+          "question": "Why does the rate of a gaseous reaction increase with increase in pressure at constant temperature?",
+          "topic": "Kinetics",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p1_structured_5",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 6,
+          "question": "A compound is made up of 86% carbon and 14% hydrogen. What is its empirical formula?",
+          "topic": "Chemical Calculations",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p1_structured_6",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 7,
+          "question": "Solutions of transition metal ions are coloured because",
+          "topic": "Transition Metals",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p1_structured_7",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 8,
+          "question": "Which of the following compounds of sulphur undergoes disproportionation in an acid medium?",
+          "topic": "Redox Reactions",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p1_structured_8",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 9,
+          "question": "Identify the type of reaction in the conversion CH3CH3 + Cl2 → CH3CH2Cl + HCl",
+          "topic": "Mechanisms of Reactions",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p1_structured_9",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 10,
+          "question": "Text Box: 0.2 g of a volatile liquid on complete evaporation occupied a volume of 30 cm3 at standard temperature and pressure (0 °C, 1 atm). The relative molecular mass of the liquid can be calculated from the expression",
+          "topic": "Chemical Calculations",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p1_structured_10",
+          "year": 2019,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 11,
+          "question": "In which of the following reactions is the enthalpy change likely to be exothermic (ΔH < 0)",
+          "topic": "Thermochemistry",
+          "marks": 0,
+          "model_answer": null
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "paper": 2,
+      "filename": "AL-2019-CHEMISTRY-2.pdf",
+      "total_mcq": 19,
+      "total_structured": 4,
+      "mcq_questions": [
+        {
+          "id": "2019_p2_mcq_1",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "The radioactive decay of has a half-life of 120 years",
+          "topic": "Radioactive Decay",
+          "options": [
+            "Nickel",
+            "Copper",
+            "Zinc",
+            "Iron"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_2",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "What do you understand by the half-life of a radioactive isotope?",
+          "topic": "Radioactive Decay",
+          "options": [
+            "The time taken for a radioactive isotope to decay completely",
+            "The time taken for a radioactive isotope to lose half of its radioactivity",
+            "The time taken for a radioactive isotope to gain half of its radioactivity",
+            "The time taken for a radioactive isotope to remain stable"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_3",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Calculate how long it will take for 1.20 g of nickel to be reduced to 0.15 g",
+          "topic": "Radioactive Decay",
+          "options": [
+            "10 years",
+            "20 years",
+            "30 years",
+            "40 years"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_4",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Why are the nitride ion (N3-), the oxide ion (O2-) and the aluminum ion (Al3+) considered to be isoelectronic ions?",
+          "topic": "Atomic Structure",
+          "options": [
+            "Because they have the same number of electrons",
+            "Because they have the same number of protons",
+            "Because they have the same number of neutrons",
+            "Because they have the same number of atoms"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_5",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Arrange the above ions in order of increasing ionic size beginning with the smallest ion",
+          "topic": "Atomic Structure",
+          "options": [
+            "Al3+ < O2- < N3-",
+            "Al3+ < N3- < O2-",
+            "N3- < Al3+ < O2-",
+            "O2- < N3- < Al3+"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_6",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "What is meant by the terms “order of reaction” and \"instantaneous rate\" as used in chemical kinetics?",
+          "topic": "Chemical Kinetics",
+          "options": [
+            "Order of reaction: The rate at which a reaction occurs, Instantaneous rate: The rate at which a reaction occurs at a given time",
+            "Order of reaction: The rate at which a reaction occurs at a given time, Instantaneous rate: The rate at which a reaction occurs",
+            "Order of reaction: The rate at which a reaction occurs, Instantaneous rate: The rate at which a reaction occurs at a given time",
+            "Order of reaction: The rate at which a reaction occurs at a given time, Instantaneous rate: The rate at which a reaction occurs"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_7",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Determine the half-life of the reaction: A + B → C + D",
+          "topic": "Chemical Kinetics",
+          "options": [
+            "10 minutes",
+            "20 minutes",
+            "30 minutes",
+            "40 minutes"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_8",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Determine the order of the reaction with respect to A?",
+          "topic": "Chemical Kinetics",
+          "options": [
+            "First order",
+            "Second order",
+            "Third order",
+            "Fourth order"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_9",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Define an acid according to Bronsted and Lowry",
+          "topic": "Acid-Base Chemistry",
+          "options": [
+            "A substance that donates a proton",
+            "A substance that accepts a proton",
+            "A substance that neither donates nor accepts a proton",
+            "A substance that donates and accepts a proton"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_10",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Explain the colour change observed at the end point of an acid-base titration where phenolphthalein is used as indicator with the acid in the conical flask",
+          "topic": "Acid-Base Chemistry",
+          "options": [
+            "The colour changes from red to colourless",
+            "The colour changes from colourless to red",
+            "The colour remains the same",
+            "The colour changes to a different shade of red"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_11",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Calculate the pH of a dilute ammonia solution with an OH- ion concentration of 0.0025 M",
+          "topic": "Acid-Base Chemistry",
+          "options": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_12",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "State Hess’s law",
+          "topic": "Thermochemistry",
+          "options": [
+            "The enthalpy change of a reaction is the sum of the enthalpy changes of the individual steps",
+            "The enthalpy change of a reaction is the difference between the enthalpy changes of the individual steps",
+            "The enthalpy change of a reaction is the product of the enthalpy changes of the individual steps",
+            "The enthalpy change of a reaction is the quotient of the enthalpy changes of the individual steps"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_13",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Determine the enthalpy change when 30.8g of ethanol is produced from the reaction below; C2H4 (g) + H2O(l) → C2H5OH(l)",
+          "topic": "Thermochemistry",
+          "options": [
+            "-1370 kJ/mol",
+            "-1415.6 kJ/mol",
+            "-1410 kJ/mol",
+            "-1400 kJ/mol"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_14",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "What do you understand by the “coordination number” of an ion in a crystal structure?",
+          "topic": "Crystal Structure",
+          "options": [
+            "The number of ions surrounding a central ion",
+            "The number of ions surrounding a central atom",
+            "The number of atoms surrounding a central ion",
+            "The number of atoms surrounding a central atom"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_15",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "State the coordination number of the cation in (A) NaCl and (B) CsCl",
+          "topic": "Crystal Structure",
+          "options": [
+            "NaCl: 6, CsCl: 8",
+            "NaCl: 8, CsCl: 6",
+            "NaCl: 4, CsCl: 6",
+            "NaCl: 6, CsCl: 4"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_16",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "What is a chemical bond?",
+          "topic": "Chemical Bonding",
+          "options": [
+            "A force that holds particles together",
+            "A force that holds particles apart",
+            "A force that holds particles in a specific arrangement",
+            "A force that holds particles in a random arrangement"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_17",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "List and locate the different types of bonds that hold particles together in NH4Cl(s)",
+          "topic": "Chemical Bonding",
+          "options": [
+            "Ionic bond: between N and H, Covalent bond: between N and H, Hydrogen bond: between H and Cl",
+            "Ionic bond: between N and Cl, Covalent bond: between N and H, Hydrogen bond: between H and Cl",
+            "Ionic bond: between N and H, Covalent bond: between N and Cl, Hydrogen bond: between H and Cl",
+            "Ionic bond: between N and Cl, Covalent bond: between N and H, Hydrogen bond: between H and N"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_18",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "What do you understand by the term ‘homogenous mixture’?",
+          "topic": "Phase Equilibria",
+          "options": [
+            "A mixture in which the components are evenly distributed",
+            "A mixture in which the components are not evenly distributed",
+            "A mixture in which the components are not present",
+            "A mixture in which the components are present but not evenly distributed"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2019_p2_mcq_19",
+          "year": 2019,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Draw a labelled phase diagram to show the variation of boiling point with composition at constant pressure for a mixture of ethanol and carbon disulphide",
+          "topic": "Phase Equilibria",
+          "options": [
+            "A diagram showing a decrease in boiling point with increasing composition of ethanol",
+            "A diagram showing an increase in boiling point with increasing composition of ethanol",
+            "A diagram showing no change in boiling point with increasing composition of ethanol",
+            "A diagram showing a decrease in boiling point with increasing composition of carbon disulphide"
+          ],
+          "correct_index": null
+        }
+      ],
+      "structured_questions": [
+        {
+          "id": "2019_p2_structured_1",
+          "year": 2019,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 1,
+          "question": "(a) (i) What is a molar solution? (ii) Calculate the mass of Na2S203.5H20 needed to prepare 250 cm3 of a 0.011 M solution in a volumetric flask. (RMM = 248) (2 marks) (b) Calculate the percentage yield when 2.30 g of ethanol reacts completely with excess ethanoic acid to give 3.52 g of ethyl ethanoate. (RMM: Ethanol = 46; Ethylethanoate = 88.0) (3 marks) (c) (i) Write the equation for the radioactive decay of nickel (ii) (ii) What do you understand by the half-life of a radioactive isotope? (iii) Calculate how long it will take for 1.20 g of nickel to be reduced to 0.15 g (d) The nitride ion (N3-), the oxide ion (O2-) and the aluminum ion (Al3+) are isoelectronic. (i) Why are they considered to be isoelectronic ions? (ii) Arrange the above ions in order of increasing ionic size beginning with the smallest ion.",
+          "topic": "Physical and General Chemistry",
+          "marks": 20,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p2_structured_2",
+          "year": 2019,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 2,
+          "question": "(a) Hess's law can be useful in calculating enthalpy changes of reactions that cannot be measured directly.. (i) State Hess’s law. (ii) Given the following data in KJmol-1: C2H5OH (i)+302(g)→ 2C02(8)+ 3H20(I) AH[] = -1370 C2H4 (g) + 302 (g)→ 2CO2 (g) + 2H2O(i) AH[] = -1415.6 Determine the enthalpy change when 30.8g of ethanol is produced from the reaction below; C2H4 (g) + H2O(i) → C2 H5OH (i) (RMM of ethanol = 46). (4 marks) (b) (i) What do you understand by the “coordination number” of an ion in a crystal structure? (ii) State the coordination number of the cation in (A) NaCl ......................................................................................................................................  ......................... (B) CsCI ........  ...  ..............................................................................  ...  ......................................  ..  ...................... (3 marks) (c) (i) What is a chemical bond? . (ii) List and locate the different types of bonds that hold particles together in NH4CI (s) (3 marks) (d) Ethanol and carbon disulphide (CS2) are completely miscible liquids forming a homogenous mixture. On mixing the two liquids, there is a fall in temperature. (i) What do you understand by the term ‘homogenous mixture’? (ii) Draw a labelled phase diagram to show the variation of boiling point with composition at constant pressure for a mixture of ethanol and carbon disulphide.",
+          "topic": "Physical and General Chemistry",
+          "marks": 20,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p2_structured_3",
+          "year": 2019,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 3,
+          "question": "(a) (i) What is meant by the terms “order of reaction” and \"instantaneous rate\" as used in chemical kinetics? (5 marks) (b) (i) Define an acid according to Bronsted and Lowry. (ii) Phenolphthalein indicator represented by HIn, is a weak acid that dissociates in water as follows: Hln(aq) + H+(aq)+ In- (aq) Colourless red colour Explain the colour change observed at the end point of an acid-base titration where phenolphthalein is used as indicator with the acid in the conical flask. (iii) The pH range of phenolphthalein is 8.2 - 10. Give an acid and an alkali for which phenolphthalein is suitable as an indicator during titration (iv) The OH- ion concentration in a dilute ammonia solution is 0.0025 M.Calculate the pH of the solutions (5 marks)",
+          "topic": "Physical and General Chemistry",
+          "marks": 20,
+          "model_answer": null
+        },
+        {
+          "id": "2019_p2_structured_4",
+          "year": 2019,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 4,
+          "question": "(e) The data below is for the kinetic study of the reaction: A + B → C +D (A) Order of reaction: (B) Instantaneous reaction rate: (ii) From the data, determine the half-life of the reaction. (iii) Determine the order of the reaction with respect to A? (5 marks)",
+          "topic": "Physical and General Chemistry",
+          "marks": 20,
+          "model_answer": null
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "paper": 1,
+      "filename": "al-2020-chemistry-1.pdf",
+      "total_mcq": 13,
+      "total_structured": 14,
+      "mcq_questions": [
+        {
+          "id": "2020_p1_mcq_1",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 2,
+          "question": "Which of the reagents below can best be used to distinguish between propan-1-ol (1-propanol) and propan-2-ol (2-propanol)?",
+          "topic": "Chemistry",
+          "options": [
+            "2/NaOH (g)",
+            "HVKMnOi",
+            "Cone H2SO4",
+            "Neutral FeCl3"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_2",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 7,
+          "question": "Which one of the following processes is exothermic?",
+          "topic": "Chemistry",
+          "options": [
+            "CO(g) + e— → O(g) + C(g)",
+            "O(g) + C(g) → CO(g) + e—",
+            "O(g) + C(g) → CO(g) + e—",
+            "O(g) + C(g) → CO(g) + e—"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_3",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 8,
+          "question": "The metal in gunpowder that causes this flame colour is?",
+          "topic": "Chemistry",
+          "options": [
+            "Sodium",
+            "Caesium",
+            "Potassium",
+            "Calcium"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_4",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 9,
+          "question": "In which group of the periodic table is element X found?",
+          "topic": "Chemistry",
+          "options": [
+            "I",
+            "II",
+            "III",
+            "IV"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_5",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 10,
+          "question": "Which of the elements below exhibit the “inert-pair effect”?",
+          "topic": "Chemistry",
+          "options": [
+            "Sulphur",
+            "Lead",
+            "Sodium",
+            "Magnesium"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_6",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 11,
+          "question": "The number and types of particles emitted in the radioactive decay of 5725 Mn to 23 V is (are)",
+          "topic": "Chemistry",
+          "options": [
+            "2 α-particles",
+            "1 α-particle and 1p-particle",
+            "2 α-particles and 1 β-particle",
+            "2 α-particles and 2 p-particles"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_7",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 12,
+          "question": "Give the name of the reaction that occurs when ethene reacts with aqueous bromine.",
+          "topic": "Chemistry",
+          "options": [
+            "Electrophilic addition",
+            "Electrophilic substitution",
+            "Nucleophilic addition",
+            "Nucleophilic substitution"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_8",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 13,
+          "question": "Give the IUPAC name of the following Br",
+          "topic": "Chemistry",
+          "options": [
+            "3-bromo-3-methylhexane",
+            "2-bromo-2-ethylpentane",
+            "4-bromo-4-ethylpentane",
+            "4-bromo-4-methylhexane"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_9",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 14,
+          "question": "What volume and concentration of H2SO4 will be needed to exactly neutralize 20 cm3 of 0.3 M NaOH?",
+          "topic": "Chemistry",
+          "options": [
+            "20 cm3 of 0.3 M H2SO4",
+            "10 cm3 of 0.6 M H2SO4",
+            "20 cm3 of 0.6 M H2SO4",
+            "10 cm3 of 0.3 M H2SO4"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_10",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 15,
+          "question": "Chlorine may be prepared in the laboratory from concentrated hydrochloric acid by heating it with",
+          "topic": "Chemistry",
+          "options": [
+            "Concentrated H2SO4",
+            "Manganese (IV) oxide",
+            "Sodium chloride crystals",
+            "Lead (II) oxide"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_11",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 16,
+          "question": "Which of the following compounds would likely undergo a nucleophilic addition reaction?",
+          "topic": "Chemistry",
+          "options": [
+            "Ethene",
+            "Bromoethane",
+            "Ethanal",
+            "Benzene"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_12",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 17,
+          "question": "Which one of the following elements is most likely to have successive ionization energies in kJ/mol of 786, 1580, 3230, 4360, 16000, 20000 etc?",
+          "topic": "Chemistry",
+          "options": [
+            "Al",
+            "Mg",
+            "P",
+            "Si"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p1_mcq_14",
+          "year": 2020,
+          "paper": 1,
+          "type": "mcq",
+          "question_number": 19,
+          "question": "The bond enthalpy in kJ/mol of the C-H bond in methane is",
+          "topic": "Chemistry",
+          "options": [
+            "+375",
+            "+412",
+            "-375",
+            "-412"
+          ],
+          "correct_index": null
+        }
+      ],
+      "structured_questions": [
+        {
+          "id": "2020_p1_structured_1",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 2,
+          "question": "Which of the reagents below can best be used to distinguish between propan-1-ol (1-propanol) and propan-2-ol (2-propanol)?\nA I 2/NaOH (g) \nB H2KMnO4 \nC Cone H2SO4 \nD Neutral FeCl3",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_2",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 3,
+          "question": "Which one of the following processes is exothermic?\n^)’ (g) > 0 (g) 15 O' (g) l- e- > 02 (g) C O (g) + e— » 0 (g) I) 0 (g) — > O' (g) + c",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_3",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 4,
+          "question": "The graph below is part of a plot of log ionization energy against number of electrons removed for element X.\nIn which group of the periodic table is element X found?\nA I B II C III D IV",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_4",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 5,
+          "question": "Which of the elements below exhibit the “inert-pair effect”?\nA sulphur B lead C sodium D magnesium",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_5",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 6,
+          "question": "The number and types of particles emitted in the radioactive decay of 5725 Mn to 23 V is (arc) A 2 a-particles B la-particle and lp-particle C 2 a-particles and 1 (3-particle D 2 a-particles and 2 p-particles",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_6",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 7,
+          "question": "Give the name of the reaction that occurs when ethene reacts with aqueous bromine.\nA Electrophilic addition B Electrophilic substitution C Nucleophilic addition D Nucleophilic substitution",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_7",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 8,
+          "question": "Give the IUPAC name of the following Br Choose the apparatus that can be used to easily monitor the rate of reaction between MnCV ion and C2O42' ions in acidic medium.\nA dilatometer B Calorimeter C Polarimeter D Colourimeter",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_8",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 9,
+          "question": "CH3CH2CH2C compound.\nA 3-bromo-3-methylhexane B 2-bromo-2-ethylpentane C 4-bromo-4-ethylpentane D 4-bromo-4-methylhexane",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_9",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 10,
+          "question": "What volume and concentration of H2SO4 will be needed to exactly neutralize 20 cm3 of 0.3 M NaOH?\nA 20 cm3 of 0.3 M H2SO4 B 10 cm3 of 0.6 M H2SO4 C 20 cm3 of 0.6 M H2SO4 D 10 cm3 of 0.3 M H2SO4",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_10",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 11,
+          "question": "Chlorine may be prepared in the laboratory from concentrated hydrochloric acid by heating it with\nA Concentrated H2SO4 B Manganese (IV) oxide C Sodium chloride crystals D Lead (II) oxide",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_11",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 12,
+          "question": "Which of the following compounds would likely undergo a nucleophilic addition reaction?\nA Ethene B Bromoethane C Ethanal D Benzene",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_12",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 13,
+          "question": "Which one of the following elements is most likely to have successive ionization energies in kJ/mol* of 786, 1580, 3230, 4360, 16000, 20000 etc\nA Al B Mg C P D Si",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_13",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 14,
+          "question": "The reaction F2 + 2ClO2 → * 2FCIO2 was Given the following data:\nAHr [CHi (g)] = -75 kJ mol C (graphitic) — > C (g) AH = +712 kJ mol l/2H2 (g) — > H (g) AM = +215.5 kJ mol",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p1_structured_14",
+          "year": 2020,
+          "paper": 1,
+          "type": "structured",
+          "question_number": 15,
+          "question": "The bond enthalpy in kJ mol-1 of the C-H bond in methane is\nA +375 B +412 C -375 D -412",
+          "topic": "Chemistry",
+          "marks": 0,
+          "model_answer": null
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "paper": 2,
+      "filename": "al-2020-chemistry-2.pdf",
+      "total_mcq": 9,
+      "total_structured": 2,
+      "mcq_questions": [
+        {
+          "id": "2020_p2_mcq_1",
+          "year": 2020,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "Arrange the group VII elements in order of increasing oxidizing strength. Explain the trend.",
+          "topic": "Group VII Elements",
+          "options": [
+            "Fluorine, Chlorine, Bromine, Iodine",
+            "Fluorine, Chlorine, Iodine, Bromine",
+            "Chlorine, Fluorine, Iodine, Bromine",
+            "Iodine, Bromine, Chlorine, Fluorine"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p2_mcq_2",
+          "year": 2020,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "Give the formulae and names of the oxo-acids of iodine in the following oxidation states: Oxidation state Formula Name +1 +5",
+          "topic": "Oxo-acids of Iodine",
+          "options": [
+            "HIO, Iodous acid; HIO3, Iodic acid",
+            "HIO, Iodic acid; HIO3, Iodous acid",
+            "HIO3, Iodic acid; HIO, Iodous acid",
+            "HIO, Iodous acid; HIO3, Iodic acid"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p2_mcq_3",
+          "year": 2020,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "Write balanced chemical equations to show the reactions of Cl2 (g) with: A) Cold dilute KOH B) Hot concentrated KOH",
+          "topic": "Chemical Reactions",
+          "options": [
+            "A) 2Cl2 + 2KOH + 2H2O -> 2KCl + 2HClO; B) 2Cl2 + 2KOH + 2H2O -> 2KCl + 2HClO",
+            "A) 2Cl2 + 2KOH -> 2KCl + H2O; B) 2Cl2 + 2KOH + 2H2O -> 2KCl + 2HClO",
+            "A) 2Cl2 + 2KOH + 2H2O -> 2KCl + 2HClO; B) 2Cl2 + 2KOH -> 2KCl + H2O",
+            "A) 2Cl2 + 2KOH -> 2KCl + H2O; B) 2Cl2 + 2KOH + 2H2O -> 2KCl + 2HClO"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p2_mcq_4",
+          "year": 2020,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "How does the second ionization energy vary for group I and group II elements in the same period of the Periodic Table? Give a reason for your trend",
+          "topic": "Ionization Energy",
+          "options": [
+            "Increases for group I and decreases for group II; The reason is that the outer electrons are more easily removed in group I elements",
+            "Decreases for group I and increases for group II; The reason is that the outer electrons are more easily removed in group II elements",
+            "Increases for group I and increases for group II; The reason is that the outer electrons are more easily removed in both group I and group II elements",
+            "Decreases for group I and decreases for group II; The reason is that the outer electrons are more easily removed in both group I and group II elements"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p2_mcq_5",
+          "year": 2020,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "How does the solubility of hydroxides of the group II elements vary down the group?",
+          "topic": "Solubility of Hydroxides",
+          "options": [
+            "Increases down the group; The reason is that the lattice energy decreases down the group",
+            "Decreases down the group; The reason is that the lattice energy increases down the group",
+            "Remains the same down the group; The reason is that the lattice energy remains the same down the group",
+            "Increases down the group; The reason is that the lattice energy increases down the group"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p2_mcq_6",
+          "year": 2020,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "Identify the acid/base conjugate pairs in the reaction below: C6H5COO-(aq) + H2O(l) -> C6H5COOH(aq) + OH-(aq)",
+          "topic": "Acid/Base Conjugate Pairs",
+          "options": [
+            "C6H5COO- and OH-; C6H5COOH and H2O",
+            "C6H5COO- and C6H5COOH; OH- and H2O",
+            "C6H5COOH and OH-; C6H5COO- and H2O",
+            "C6H5COO- and H2O; C6H5COOH and OH-"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p2_mcq_7",
+          "year": 2020,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "What does an increase in temperature affect: A) Equilibrium position B) Equilibrium constant of the above reaction",
+          "topic": "Effect of Temperature on Equilibrium",
+          "options": [
+            "A) Increases; B) Increases",
+            "A) Decreases; B) Decreases",
+            "A) Increases; B) Decreases",
+            "A) Decreases; B) Increases"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p2_mcq_9",
+          "year": 2020,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "Give one reaction in which Li and Mg show a diagonal relationship",
+          "topic": "Diagonal Relationship",
+          "options": [
+            "Li + MgCl2 -> LiCl + Mg; Li + MgSO4 -> Li2SO4 + Mg",
+            "Li + MgCl2 -> LiCl + Mg; Mg + 2LiOH -> Li2O + Mg(OH)2",
+            "Li + MgCl2 -> LiCl + Mg; Li + Mg(OH)2 -> LiOH + MgH2O",
+            "Li + MgCl2 -> LiCl + Mg; Li + Mg(OH)2 -> LiOH + Mg(OH)2"
+          ],
+          "correct_index": null
+        },
+        {
+          "id": "2020_p2_mcq_10",
+          "year": 2020,
+          "paper": 2,
+          "type": "mcq",
+          "question_number": 6,
+          "question": "With the use of chemical equations, show the effect of heat on the nitrates of lithium and potassium",
+          "topic": "Effect of Heat on Nitrates",
+          "options": [
+            "LiNO3 -> Li2O + NO2 + 1/2O2; KNO3 -> K2O + NO2 + 1/2O2",
+            "LiNO3 -> Li2O + NO2 + 1/2O2; KNO3 -> K2O + NO2 + 1/2O2",
+            "LiNO3 -> Li2O + NO2 + 1/2O2; KNO3 -> K2O + NO2 + 1/2O2",
+            "LiNO3 -> Li2O + NO2 + 1/2O2; KNO3 -> K2O + NO2 + 1/2O2"
+          ],
+          "correct_index": null
+        }
+      ],
+      "structured_questions": [
+        {
+          "id": "2020_p2_structured_1",
+          "year": 2020,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 2,
+          "question": "An iron ore contains iron (II) carbonate. PeCOj. The percentage of iron (II) in the ore can be determined by titration with acidified potassium dichromate (VI). Ihe ionic equation is shown below. Cr2072 (aq) + 6Fe2+ (aq) + 14H+ (aq) → Cr3+ (aq) + 6Fe3+ (aq) + 7H2O (l) (a) A 5.00 g sample of the ore was reacted with excess concentrated hydrochloric acid and filtered. The filtrate was made up to 250 cm3 in a volumetric flask with distilled water. A 25.0 cm3 sample of the standard solution required 27.30 cm3 of 0.020 mol dm-3 dichromate (VI) solution for complete reaction. Calculate: (i) the amount, in moles, of dichromate (VI) ions used in the titration. (ii) the amount, in moles, of Fe2+ ions present in 25 cm3 of solution. (iii) the mass of iron (II) carbonate present in the ore. (iv) the percentage of iron (II) carbonate in the sample. (6 marks) (b) What do you understand by: (i) Relative atomic mass? (ii) Isotopes? (2 marks) (c) Consider the diagram of a mass spectrometer below. A u (i) On the diagram, label the parts A to D. (ii) State what happens at A, B and C. (5 marks) (d) The following results were obtained when determining the rate of the reaction 2NO(g) + Cl2(g) → 2NOCl(g) Initial rate mol dm-3 [NO] mol dm-3 [Cl2] mol dm-3 Expt [cm3 min-1] 0.10 0.17 0.10 2 0.10 0.35 0.20 3 0.20 1.45 0.20 (i) Determine the overall order of the reaction above showing all the steps. (ii) Consider the reaction below 2N2O5(g) → 4NO2(g) + O2(g). The mechanism for the reaction is given as: 2N2O5(g) → N2O3(g) + 2NO2(g) + O2(g) N2O3(g) → NO(g) + NO2(g) NO(g) + 2N2O5(g) → 3NO2(g) + 2NO(g) Write down the rate equation for the reaction Slow step Fast step Fast step (4 marks) (e) Study the reaction below and answer the questions that follow. 2NO2 How does an increase in temperature affect: A: Equilibrium position N2O4 - 1 AH = +243 kJ mol B: Equilibrium constant of the above reaction (2 marks) (f) Identify the acid / base conjugate pairs in the reaction below. C6H5COO- (aq) + H2O (l) → C6H5COOH (aq) + OH- (aq) (1 mark) (Total = 20 marks)",
+          "topic": "Physical and General Chemistry",
+          "marks": 20,
+          "model_answer": null
+        },
+        {
+          "id": "2020_p2_structured_2",
+          "year": 2020,
+          "paper": 2,
+          "type": "structured",
+          "question_number": 6,
+          "question": "(i) Arrange the group VII elements in order of increasing oxidizing strength. Explain the trend. (ii) Write balanced chemical equations to show the reactions of Cl2 (g) with: A) Cold dilute KOH B) Hot concentrated KOH. (iii) Give the formulae and names of the oxo-acids of iodine in the following oxidation states: Oxidation state Formula Name +1 +5 (7 marks) (b) (i) How does the second ionization energy vary for group I and group II elements in the same period of the Periodic Table. Give a reason for your trend. (ii) Lithium shows a diagonal relationship with magnesium. A) Why are these elements diagonally related? B) Give one reaction in which Li and Mg show a diagonal relationship. (iii) With the use of chemical equations show the effect of heat on the nitrates of lithium and potassium. LiNO3 KNO3 (iv) How does the solubility of hydroxides of the group II elements vary down the group? (7 marks) (c) (i) In the space below sketch a graph of variation of the first ionization energy for the elements Sodium to Argon.",
+          "topic": "Physical and General Chemistry",
+          "marks": 7,
+          "model_answer": null
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "paper": 1,
+      "filename": "Al-2021-chemistry-1.pdf",
+      "total_mcq": 0,
+      "total_structured": 0,
+      "mcq_questions": [],
+      "structured_questions": []
+    },
+    {
+      "year": 2021,
+      "paper": 2,
+      "filename": "Al-2021-chemistry-2.pdf",
+      "total_mcq": 0,
+      "total_structured": 0,
+      "mcq_questions": [],
+      "structured_questions": []
+    }
+  ]
+}

@@ -66,7 +66,10 @@ conversation_manager = ConversationManager()
 # CONFIGURE GROQ
 # ─────────────────────────────────────────
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-groq_client = Groq(api_key=GROQ_API_KEY)
+
+def get_groq_client():
+    """Create a fresh Groq client on each call — prevents closed connection errors."""
+    return Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 MODEL_NAME = "llama-3.1-8b-instant"
 RELEVANCE_THRESHOLD = 0.3
@@ -202,7 +205,7 @@ def call_groq(
     try:
         messages = build_messages(question, context, session_id)
 
-        response = groq_client.chat.completions.create(
+        response = get_groq_client().chat.completions.create(
             model=MODEL_NAME,
             messages=messages,
             temperature=temperature,
@@ -247,7 +250,7 @@ def stream_groq(
     try:
         messages = build_messages(question, context, session_id)
 
-        stream = groq_client.chat.completions.create(
+        stream = get_groq_client().chat.completions.create(
             model=MODEL_NAME,
             messages=messages,
             temperature=0.5,
