@@ -8,6 +8,7 @@ import {
     updateProfile
 } from 'firebase/auth';
 import { auth } from '../firebase';
+import { saveUserProfile } from '../services/databaseService'; // ← ADD THIS
 
 // Create the authentication context
 export const AuthContext = createContext({});
@@ -21,7 +22,9 @@ export const AuthProvider = ({ children }) => {
     const register = async (email, password, displayName) => {
         try {
             setError(null);
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const userCredential = await createUserWithEmailAndPassword(
+                auth, email, password
+            );
 
             // Update user profile with display name
             if (displayName) {
@@ -29,6 +32,9 @@ export const AuthProvider = ({ children }) => {
                     displayName: displayName
                 });
             }
+
+            // Save new user to Firebase Realtime Database
+            await saveUserProfile(userCredential.user);
 
             return userCredential.user;
         } catch (err) {
@@ -41,7 +47,13 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, password) => {
         try {
             setError(null);
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(
+                auth, email, password
+            );
+
+            //  Update last active time in Firebase on login
+            await saveUserProfile(userCredential.user);
+
             return userCredential.user;
         } catch (err) {
             setError(err.message);
@@ -73,12 +85,16 @@ export const AuthProvider = ({ children }) => {
 
     // Listen for auth state changes
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // Save profile every time auth state confirms a logged-in user
+                // This catches page refreshes and returning users
+                await saveUserProfile(user);
+            }
             setCurrentUser(user);
             setLoading(false);
         });
 
-        // Cleanup subscription on unmount
         return unsubscribe;
     }, []);
 

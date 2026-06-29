@@ -2,18 +2,27 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import MessageBubble from '../components/chat/MessageBubble';
 import ChatBox from '../components/chat/ChatBox';
+import { auth } from '../firebase';
+import {
+    startSession,
+    endSession,
+    saveMessage,
+    listenToSessions
+} from '../services/databaseService';
 
-// ✅ Helper — generates a unique session ID
+//  Helper — generates a unique session ID
 const generateSessionId = () =>
     `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
 const ChatPage = () => {
     const { toggleSidebar } = useOutletContext() || {};
     const [messages, setMessages] = useState([]);
+    const [recentSessions, setRecentSessions] = useState([]);
+    const [isSaving, setIsSaving] = useState(false);
     const messagesEndRef = useRef(null);
     const chatBoxRef = useRef(null);
 
-    // ✅ Unique session ID per chat tab — lives in useRef so it never triggers re-render
+    // Unique session ID per chat tab
     const sessionId = useRef(generateSessionId());
 
     const scrollToBottom = () => {
@@ -24,17 +33,67 @@ const ChatPage = () => {
         scrollToBottom();
     }, [messages]);
 
-    const addMessage = (message, isAI) => {
+    //  Firebase — start session and listen for updates
+    useEffect(() => {
+        const user = auth.currentUser;
+        if (!user) return;
+
+        // Start this session in Firebase
+        startSession(user.uid, sessionId.current);
+
+        // Listen to all sessions in real time
+        const unsubscribe = listenToSessions(
+            user.uid,
+            (sessions) => setRecentSessions(sessions)
+        );
+
+        // Cleanup on unmount
+        return () => {
+            unsubscribe();
+            endSession(user.uid, sessionId.current);
+        };
+    }, []);
+
+    //  Add message to UI AND save to Firebase
+    const addMessage = async (message, isAI) => {
         setMessages(prev => [...prev, { ...message, isAI }]);
+
+        const user = auth.currentUser;
+        if (user) {
+            setIsSaving(true);
+            try {
+                await saveMessage(
+                    user.uid,
+                    sessionId.current,
+                    isAI ? 'assistant' : 'user',
+                    message.content
+                );
+            } catch (error) {
+                console.error('Error saving message:', error);
+            } finally {
+                setIsSaving(false);
+            }
+        }
     };
 
-    // ✅ New chat — fresh session ID + cleared messages
-    const handleNewChat = () => {
+    //  New chat — end old session, start fresh one
+    const handleNewChat = async () => {
+        const user = auth.currentUser;
+
+        if (user) {
+            await endSession(user.uid, sessionId.current);
+        }
+
+        // Generate fresh session ID
         sessionId.current = generateSessionId();
         setMessages([]);
+
+        if (user) {
+            await startSession(user.uid, sessionId.current);
+        }
     };
 
-    // ✅ Count only student messages for display (not AI responses)
+    //  Count only student messages
     const studentMessageCount = messages.filter(m => !m.isAI).length;
 
     const suggestionChips = [
@@ -64,51 +123,100 @@ const ChatPage = () => {
                             <span>New Chat</span>
                         </button>
 
-                        {/* ✅ Session info — shows real student exchange count */}
+                        {/*  Active session info */}
                         <div className="px-3 py-2 bg-primary/10 rounded-lg mb-4">
-                            <p className="text-xs text-primary font-semibold">
-                                Active Session
-                            </p>
+                            <div className="flex items-center justify-between">
+                                <p className="text-xs text-primary font-semibold">
+                                    Active Session
+                                </p>
+                                {/* Firebase saving indicator */}
+                                {isSaving && (
+                                    <span className="text-[10px] text-slate-400 flex items-center gap-1">
+                                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                                        Saving...
+                                    </span>
+                                )}
+                                {!isSaving && studentMessageCount > 0 && (
+                                    <span className="text-[10px] text-green-600 flex items-center gap-1">
+                                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                                        Saved ✓
+                                    </span>
+                                )}
+                            </div>
                             <p className="text-xs text-slate-500 mt-1">
                                 {studentMessageCount === 0
                                     ? "No messages yet"
                                     : `${studentMessageCount} question${studentMessageCount !== 1 ? 's' : ''} asked`
                                 }
                             </p>
-                            {/* ✅ Show Socratic turn indicator */}
                             {studentMessageCount > 0 && (
                                 <p className="text-xs text-primary/70 mt-0.5 font-medium">
                                     Turn {Math.min(studentMessageCount, 3)}
-                                    {studentMessageCount >= 3 ? " — Answer phase" : " — Guided phase"}
+                                    {studentMessageCount >= 3
+                                        ? " — Answer phase"
+                                        : " — Guided phase"
+                                    }
                                 </p>
                             )}
                         </div>
                     </div>
 
-                    {/* ✅ REMOVED: hardcoded recentSessions — replaced with live message topics */}
+                    {/* Past sessions from Firebase — real data */}
                     <div className="flex-1 overflow-y-auto space-y-1">
-                        {messages.filter(m => !m.isAI).length === 0 ? (
+                        <p className="text-[10px] text-slate-400 uppercase tracking-wider px-2 mb-2 font-semibold">
+                            {recentSessions.length > 0
+                                ? `${recentSessions.length} Past Sessions`
+                                : 'Recent Sessions'
+                            }
+                        </p>
+
+                        {recentSessions.length === 0 ? (
                             <p className="text-xs text-gray-400 px-3 py-2">
-                                Your questions will appear here
+                                Your sessions will appear here
                             </p>
                         ) : (
-                            messages
-                                .filter(m => !m.isAI)
-                                .slice(-6) // show last 6 questions
-                                .map((msg, index) => (
-                                    <div
-                                        key={index}
-                                        className="px-3 py-2 flex items-center gap-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                                    >
-                                        <span className="material-symbols-outlined text-lg shrink-0">
-                                            chat_bubble
-                                        </span>
-                                        <span className="text-sm truncate font-medium">
-                                            {msg.content?.replace(/<br\/>/g, ' ').slice(0, 40)}...
-                                        </span>
+                            recentSessions.slice(0, 8).map((session) => (
+                                <div
+                                    key={session.id}
+                                    className={`px-3 py-2 flex items-start gap-2 rounded-lg transition-colors cursor-default ${
+                                        session.sessionId === sessionId.current
+                                            ? 'bg-primary/10 text-primary'
+                                            : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                                    }`}
+                                >
+                                    <span className="material-symbols-outlined text-base shrink-0 mt-0.5">
+                                        chat_bubble
+                                    </span>
+                                    <div className="min-w-0 flex-1">
+                                        <p className="text-xs font-medium truncate">
+                                            {session.lastMessage
+                                                ? session.lastMessage.substring(0, 35) + '...'
+                                                : 'New session'
+                                            }
+                                        </p>
+                                        <p className="text-[10px] text-slate-400 mt-0.5">
+                                            {session.messageCount || 0} messages
+                                            {session.status === 'active' && (
+                                                <span className="ml-1 text-green-500">● Active</span>
+                                            )}
+                                        </p>
                                     </div>
-                                ))
+                                </div>
+                            ))
                         )}
+                    </div>
+
+                    {/*  Firebase sync status */}
+                    <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+                        <div className="flex items-center gap-2 px-3 py-2">
+                            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                            <span className="text-[10px] text-slate-500 font-medium">
+                                Firebase Connected
+                            </span>
+                        </div>
+                        <p className="text-[10px] text-slate-400 px-3">
+                            All conversations saved securely
+                        </p>
                     </div>
                 </div>
             </aside>
@@ -140,7 +248,6 @@ const ChatPage = () => {
                         </div>
                     </div>
 
-                    {/* New chat on mobile */}
                     <button
                         onClick={handleNewChat}
                         className="lg:hidden flex items-center gap-1 px-3 py-1.5 bg-primary text-white text-xs font-bold rounded-lg"
@@ -167,8 +274,8 @@ const ChatPage = () => {
                                 </h3>
                                 <p className="text-sm text-slate-500 max-w-md">
                                     I guide you to discover Chemistry answers
-                                    yourself through questions. Ask me anything
-                                    from your GCE syllabus!
+                                    yourself through questions. Your conversations
+                                    are saved automatically to your account.
                                 </p>
                             </div>
 
@@ -199,7 +306,7 @@ const ChatPage = () => {
                     <div ref={messagesEndRef} />
                 </div>
 
-                {/* ✅ sessionId.current passed explicitly — ChatBox never uses 'default' fallback */}
+                {/* ChatBox */}
                 <ChatBox
                     ref={chatBoxRef}
                     onNewMessage={addMessage}

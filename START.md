@@ -25,7 +25,6 @@ python -m uvicorn main:app --reload --port 8001
 ```
 cd D:\gce-ai-tutor\gce_ai_tutor
 .venv\Scripts\activate
-python backend/manage.py runserver
 ```
 ✅ Handles auth, dashboard, topics
 
